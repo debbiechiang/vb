@@ -1,10 +1,10 @@
 @import "normalize";
+@import "colors";
 
-/**
- * 2.0 - Global
- *
- * Styles that 
- */
+* {
+  font-family: 'Merriweather Sans', Helvetica, Arial, sans-serif;
+}
+
 .tile {
-  border: 1px solid green;
+  border: 1px solid red;
 }

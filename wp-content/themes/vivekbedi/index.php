@@ -1,4 +1,4 @@
-<?php wp_header(); ?>
+<?php wp_head(); ?>
 
    <div class="container">
      <section class="hero homepage">
