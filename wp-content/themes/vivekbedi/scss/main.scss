@@ -1,10 +1,70 @@
 @import "normalize";
 @import "colors";
+@import "flex-mixins";
+@import "layout";
+@import "typography";
 
-* {
-  font-family: 'Merriweather Sans', Helvetica, Arial, sans-serif;
+// GLOBAL
+a {
+  text-decoration: none;
 }
 
-.tile {
-  border: 1px solid red;
+// NAV
+.sticky-header {
+  display: block;
+  height: 80px;
+  padding: 0 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
+
+.logomark {
+  color: $red;
+  display: inline-block;
+  font-size: 3.125rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  padding: 30px 0;
+  text-transform: lowercase;
+  span {
+    font-weight: 700;
+  }
+  &:hover,
+  &:active, 
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-items {
+  margin-left: auto;
+  align-self: center;
+}
+
+.nav-item {
+  color: $white; 
+  padding: 30px 15px;
+  display: inline-block;
+  &.active {
+    border-bottom: 2px solid $red;
+  }
+}
+
+// HERO 
+.hero {
+  background: $dark-grey;
+  padding: 210px 0;
+}
+
+.hero__title {
+  font-weight: 100;
+  max-width: 830px;
+  margin: 0 auto;
+}
+

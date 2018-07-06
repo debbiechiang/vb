@@ -1,14 +1,12 @@
-<?php wp_head(); ?>
-
-   <div class="container">
-     <section class="hero homepage">
-       <h1 class="blog-title">Hi, I'm Vivek Bedi.</h1>
-       <p class="lead blog-description">I am a passionate product leader who is obsessed with user experience.</p>
+<?php get_header(); ?>
+ <div class="wrapper container-fluid">
+     <section class="hero homepage row">
+       <h1 class="hero__title">Hi, I'm Vivek Bedi. I am a passionate product leader who is obsessed with user experience.</p>
      </section>
      <div class="row">
        <section class="col-sm-8 blog-main">
          <h2 class="body-title">Latest News</h2>
-         <a class="eyebrow down-1" href="">See All News</a>
+         <a class="eyebrow down-1" href="">See All News </a>
          <article class="tile tile--dark-bg">
            <a href="" class="tile__category down-1">Blog</a>
            <span class="tile__date down-1">April 2, 2018</span>
@@ -34,7 +32,7 @@
          </article>
          <article class="tile tile--grey-bg">
            <a href="" class="tile-type down-1">Blog</a>
-           <span class="tile down-1">April 2, 2018</span>
+           <span class="tile__date down-1">April 2, 2018</span>
 
            <h3><a href="" class="tile__title">The User-Obsessed PM</a></h3>
 
@@ -99,4 +97,6 @@
      </div><!-- /.row -->
 
    </div><!-- /.container -->
-   <?php wp_footer(); ?>
+
+<?php get_footer(); ?>
+

@@ -8,27 +8,26 @@
     <meta name="author" content="">
 
     <title>Vivek Bedi</title>
-
-    <!-- Custom styles for this template -->
     <link href="<?php echo get_bloginfo('template_directory'); ?>/css/main.css" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Merriweather+Sans|Raleway" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <?php wp_head(); ?>
   </head>
 
   <body>
-
-   <header class="blog-masthead">
-     <div class="container">
-       <nav class="blog-nav">
-         <a class="blog-nav-item active" href="#">Home</a>
-         <a class="blog-nav-item" href="#">News</a>
-         <a class="blog-nav-item" href="#">Speaking</a>
-         <a class="blog-nav-item" href="#">About</a>
+   <header class="wrapper sticky-header">
+     <div class="nav-wrapper">
+      <a class="logomark" href="#"><span>Vivek</span>Bedi</a>
+       <nav class="nav-items">
+         <a class="nav-item active" href="#">Home</a>
+         <a class="nav-item" href="#">News</a>
+         <a class="nav-item" href="#">Speaking</a>
+         <a class="nav-item" href="#">About</a>
        </nav>
      </div>
    </header>
