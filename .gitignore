@@ -1,3 +1,6 @@
+*.DS_Store
+.gitignore
+
 *.log
 wp-config.php
 wp-content/advanced-cache.php
