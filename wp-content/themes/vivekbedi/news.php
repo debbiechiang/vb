@@ -22,6 +22,11 @@
       <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
     </div>
     <div class="row">
+      <?php hm_get_template_part('tile', ['bg' => 'grey-bg', 'width' => '1x']) ?>
+      <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
+      <?php hm_get_template_part('tile', ['bg' => 'grey-bg', 'width' => '1x']) ?>
+    </div>
+    <div class="row">
       <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
       <?php hm_get_template_part('tile', ['bg' => 'grey-bg', 'width' => '1x']) ?>
       <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>

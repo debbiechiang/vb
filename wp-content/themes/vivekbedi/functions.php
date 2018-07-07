@@ -1,9 +1,4 @@
 <?php 
-  function wpb_add_google_fonts() {   
-    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400|Raleway:100,400,700,800', false ); 
-  }
-
-  
   /**
    * Like get_template_part() put lets you pass args to the template file
    * Args are available in the template as $template_args array
@@ -49,6 +44,17 @@
     echo $data;
   }
 
-   
-  add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
+  // WordPress Titles
+  add_theme_support( 'title-tag' );
+
+  // Support Featured Images
+  add_theme_support( 'post-thumbnails' );
+
+  function wp_startscripts() {
+    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400|Raleway:100,400,700,800', false ); 
+    wp_enqueue_style('vb-styles', get_template_directory_uri().'/css/main.css');
+    wp_register_script('scrollTrigger', get_template_directory_uri().'/js/scrollTrigger.js', array(), '1.0.0', true);
+    wp_enqueue_script('vb-scripts', get_template_directory_uri().'/js/scripts.js', array('scrollTrigger'), '1.0.0', true);
+  }
+  add_action( 'wp_enqueue_scripts', 'wp_startscripts' );
 ?>

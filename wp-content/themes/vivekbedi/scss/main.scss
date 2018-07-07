@@ -38,20 +38,30 @@ h1 {
 // NAV
 .sticky-header {
   display: block;
-  height: 80px;
   padding: 0 30px;
   position: fixed;
   top: 0;
   width: 100%;
+  &.opaque {
+    background: $white;
+    .nav-items li {
+      a, 
+      a:focus,
+      a:hover,
+      a:visited {
+        color: $dark-grey;
+      }
+    }
+  }
 }
 
 .logomark {
+  align-self: center;
   color: $red;
   display: inline-block;
   font-size: 3.125rem;
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
-  padding: 30px 0;
   text-transform: lowercase;
   span {
     font-weight: 700;
@@ -71,7 +81,6 @@ h1 {
 }
 
 .nav-items {
-
   li {
     padding: 30px 15px;
     display: inline-block;
