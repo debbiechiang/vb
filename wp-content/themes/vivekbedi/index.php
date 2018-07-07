@@ -1,6 +1,6 @@
 <?php get_header(); ?>
  <div class="">
-  <section class="hero homepage row">
+  <section class="hero homepage">
     <h1 class="hero__title"><?php echo get_bloginfo( 'description' ); ?></p>
   </section>
 </div>
