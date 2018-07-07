@@ -61,27 +61,32 @@ h1 {
   }
 }
 
-.nav-wrapper {
+.menu-nav-container {
   display: flex;
   flex-direction: row;
-}
-
-.nav-items {
   margin-left: auto;
   align-self: center;
 }
 
-.nav-item {
-  color: $white; 
-  padding: 30px 15px;
-  display: inline-block;
-  &:visited,
-  &:active {
-    color: $white;
+.nav-items {
+
+  li {
+    padding: 30px 15px;
+    display: inline-block;
+    a,
+    a:visited,
+    a:focus,
+    a:active {
+      color: $white;
+    }
   }
-  &.active {
+  .current-menu-item {
     border-bottom: 2px solid $red;
   }
+}
+
+.nav-item {
+
 }
 
 // HERO 

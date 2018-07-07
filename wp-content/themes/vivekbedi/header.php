@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Vivek Bedi</title>
+    <title><?php echo get_bloginfo( 'name' ); ?></title>
     <link href="<?php echo get_bloginfo('template_directory'); ?>/css/main.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -23,13 +23,8 @@
     <header class="sticky-header">
      <div class="wrapper container-fluid">
        <div class="nav-wrapper row">
-        <a class="logomark" href="#"><span>Vivek</span>Bedi</a>
-         <nav class="nav-items">
-           <a class="nav-item active" href="#">Home</a>
-           <a class="nav-item" href="#">News</a>
-           <a class="nav-item" href="#">Speaking</a>
-           <a class="nav-item" href="#">About</a>
-         </nav>
+        <a class="logomark" href="<?php echo get_bloginfo( 'wpurl' );?>"><span>Vivek</span>Bedi</a>
+        <?php wp_nav_menu('menu=nav&menu_class=nav-items&container=nav'); ?>
        </div>
      </div>
    </header>

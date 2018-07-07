@@ -2267,7 +2267,7 @@ optgroup {
 }
 html {
   font-family: 'Merriweather Sans', Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 200;
   -webkit-font-smoothing: antialiased;
 }
@@ -2332,23 +2332,20 @@ h1 {
 .logomark:hover, .logomark:active, .logomark:focus {
   text-decoration: none;
 }
-.nav-wrapper {
+.menu-nav-container {
   display: flex;
   flex-direction: row;
-}
-.nav-items {
   margin-left: auto;
   align-self: center;
 }
-.nav-item {
-  color: #fff;
+.nav-items li {
   padding: 30px 15px;
   display: inline-block;
 }
-.nav-item:visited, .nav-item:active {
+.nav-items li a, .nav-items li a:visited, .nav-items li a:focus, .nav-items li a:active {
   color: #fff;
 }
-.nav-item.active {
+.nav-items .current-menu-item {
   border-bottom: 2px solid #e41d3c;
 }
 .hero {
