@@ -18,25 +18,16 @@
   <section class="tile-container tile-3up">
     <div class="row">
       <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
-      <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
+      <?php hm_get_template_part('tile', ['bg' => 'grey-bg', 'width' => '1x']) ?>
       <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
     </div>
     <div class="row">
       <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
-      <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
+      <?php hm_get_template_part('tile', ['bg' => 'grey-bg', 'width' => '1x']) ?>
       <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
     </div>
   </section>
 </main><!-- /.container -->
-<section class="full-module newsletter-signup">
-  <div class="wrapper container-fluid">
-      <div class="row">
-        <div class="">
-          Newsletter signup
-        </div>
-    </div>
-   </div>
-</section>
-
+  <?php get_template_part('newsletter') ?>
 <?php get_footer(); ?>
 
