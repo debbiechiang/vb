@@ -244,3 +244,23 @@ h1 {
     margin-top: 20px;
   }
 }
+
+// NEWSLETTER SIGNUP
+.newsletter-signup {
+  padding: 40px 0;
+  background: $lt-grey;
+}
+
+// MAIN 
+.footer-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  .social-links {
+    margin-left: auto;
+    li {
+      display: inline-block;
+      margin-right: 8px;
+    }
+  }
+}

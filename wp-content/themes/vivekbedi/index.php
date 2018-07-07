@@ -1,5 +1,5 @@
 <?php get_header(); ?>
- <div class="wrapper">
+ <div class="">
   <section class="hero homepage row">
     <h1 class="hero__title">Hi, I'm Vivek Bedi. I am a passionate product leader who is obsessed with user experience.</p>
   </section>
@@ -127,11 +127,19 @@
            </li>
          </ul>
          <a href="" class="sidebar__see-more-link">See All Speaking Engagements</a>
-       </div><!-- /.blog-sidebar -->
+       </aside><!-- /.homepage-sidebar -->
 
      </div><!-- /.row -->
-
-   </div><!-- /.container -->
+  </div><!-- /.container -->
+  <section class="full-module newsletter-signup">
+    <div class="wrapper container-fluid">
+        <div class="row">
+          <div class="">
+            Newsletter signup
+          </div>
+      </div>
+     </div>
+ </section>
 
 <?php get_footer(); ?>
 

@@ -20,14 +20,16 @@
   </head>
 
   <body>
-   <header class="wrapper sticky-header">
-     <div class="nav-wrapper">
-      <a class="logomark" href="#"><span>Vivek</span>Bedi</a>
-       <nav class="nav-items">
-         <a class="nav-item active" href="#">Home</a>
-         <a class="nav-item" href="#">News</a>
-         <a class="nav-item" href="#">Speaking</a>
-         <a class="nav-item" href="#">About</a>
-       </nav>
+    <header class="sticky-header">
+     <div class="wrapper container-fluid">
+       <div class="nav-wrapper row">
+        <a class="logomark" href="#"><span>Vivek</span>Bedi</a>
+         <nav class="nav-items">
+           <a class="nav-item active" href="#">Home</a>
+           <a class="nav-item" href="#">News</a>
+           <a class="nav-item" href="#">Speaking</a>
+           <a class="nav-item" href="#">About</a>
+         </nav>
+       </div>
      </div>
    </header>

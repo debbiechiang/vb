@@ -2479,3 +2479,19 @@ h1 {
   display: inline-block;
   margin-top: 20px;
 }
+.newsletter-signup {
+  padding: 40px 0;
+  background: #eee;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.footer-content .social-links {
+  margin-left: auto;
+}
+.footer-content .social-links li {
+  display: inline-block;
+  margin-right: 8px;
+}
