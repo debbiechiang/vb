@@ -137,8 +137,8 @@ optgroup {
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 40px;
+  padding-left: 40px;
 }
 .row {
   box-sizing: border-box;
@@ -2268,7 +2268,24 @@ optgroup {
 body {
   font-family: 'Merriweather Sans', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+a {
+  text-decoration: none;
+  color: #e41d3c;
+}
+a:visited {
+  color: red;
+}
+ul li {
+  list-style-type: none;
 }
 h1 {
   color: #fff;
@@ -2277,9 +2294,6 @@ h1 {
   letter-spacing: 0.67px;
   line-height: 1.125;
   text-align: center;
-}
-a {
-  text-decoration: none;
 }
 .sticky-header {
   display: block;
@@ -2317,6 +2331,9 @@ a {
   padding: 30px 15px;
   display: inline-block;
 }
+.nav-item:visited, .nav-item:active {
+  color: #fff;
+}
 .nav-item.active {
   border-bottom: 2px solid #e41d3c;
 }
@@ -2328,4 +2345,98 @@ a {
   font-weight: 100;
   max-width: 830px;
   margin: 0 auto;
+}
+.main {
+  padding: 70px 0;
+}
+.module-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.module-header .module-header {
+  align-self: flex-start;
+}
+.module-header .module-title {
+  align-self: flex-end;
+}
+.module-header .module-link {
+  text-align: right;
+}
+.tile-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px 30px;
+  width: calc(50% - 10px);
+  margin: 0 20px 20px 0;
+  min-height: 400px;
+}
+.tile .tile__meta {
+  display: flex;
+  align-items: center;
+}
+.tile__1x + .tile__1x {
+  margin-right: 0;
+}
+.tile__2x {
+  width: 100%;
+  margin-right: 0;
+}
+.tile__2x .tile__title {
+  margin-top: 30px;
+}
+.tile__2x .tile__blurb {
+  font-size: 1.125rem;
+  line-height: 2.2222;
+}
+.tile--dark-bg {
+  background: #222;
+  color: #fff;
+}
+.tile--dark-bg .tile__category, .tile--dark-bg .tile__date, .tile--dark-bg .tile__title a, .tile--dark-bg .tile__tag-link {
+  color: #fff;
+}
+.tile--grey-bg {
+  background: #eee;
+  color: #222;
+}
+.tile--grey-bg .tile__category, .tile--grey-bg .tile__tag-link {
+  color: #e41d3c;
+}
+.tile--grey-bg .tile__date {
+  color: #999;
+}
+.tile--grey-bg .tile__title {
+  color: #222;
+}
+.tile__category {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+.tile__title {
+  font-size: 2rem;
+  line-height: 1.3125;
+  font-weight: 300;
+  margin-top: 80px;
+}
+.tile__date {
+  margin-left: 40px;
+}
+.tile__tags {
+  margin-top: auto;
+}
+.tile__tags ul {
+  margin: 0;
+  padding: 0;
+}
+.tile__tags .tile__tag {
+  display: inline-block;
+  margin-right: 8px;
+  text-align: left;
+  padding: 0;
 }

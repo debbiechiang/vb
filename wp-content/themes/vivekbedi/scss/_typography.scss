@@ -1,14 +1,29 @@
 body {
   font-family: 'Merriweather Sans', Helvetica, Arial, sans-serif;
   font-size: 16px; 
-  font-weight: 300;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1 {
+@mixin h1() {
   color: #FFFFFF;
   font-family: "Merriweather Sans";
   font-size: 4rem;
   letter-spacing: 0.67px;
   line-height: 1.125;
   text-align: center;
+}
+
+@mixin h2() {
+  font-family: "Merriweather Sans";
+  font-size: 2rem;
+  letter-spacing: 0.4px;
+  line-height: 1.25;
+}
+
+@mixin body() {
+  font-family: "Merriweather Sans";
+  font-size: 1.125rem;
+  letter-spacing: 0.23px;
+  line-height: 1.28;
 }

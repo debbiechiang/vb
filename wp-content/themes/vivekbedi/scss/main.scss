@@ -5,8 +5,30 @@
 @import "typography";
 
 // GLOBAL
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 a {
   text-decoration: none;
+  color: $red;
+
+  &:visited {
+    color: red;
+  }
+}
+
+ul {
+  li {
+    list-style-type: none;
+  }
+}
+
+h1 {
+  @include h1();
 }
 
 // NAV
@@ -51,6 +73,10 @@ a {
   color: $white; 
   padding: 30px 15px;
   display: inline-block;
+  &:visited,
+  &:active {
+    color: $white;
+  }
   &.active {
     border-bottom: 2px solid $red;
   }
@@ -68,3 +94,120 @@ a {
   margin: 0 auto;
 }
 
+// MAIN
+.main {
+  padding: 70px 0;
+}
+.module-header {
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  .module-header {
+    align-self: flex-start;
+  }
+  .module-title {
+    align-self: flex-end;
+  }
+  .module-link {
+    text-align: right;
+  }
+}
+
+// TILE
+.tile-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px 30px;
+  // float: left; 
+  width: calc(50% - 10px);
+  margin: 0 20px 20px 0;
+  min-height: 400px;
+  .tile__meta {
+    display: flex;
+    align-items: center;
+  }
+}
+.tile__1x {
+  + .tile__1x {
+    margin-right: 0;
+  }
+}
+
+.tile__2x {
+  width: 100%;
+  margin-right: 0;
+
+  .tile__title {
+    margin-top: 30px;
+  }
+
+  .tile__blurb {
+    font-size: 1.125rem;
+    line-height: 2.2222;
+  }
+}
+
+.tile--dark-bg {
+  background: $dark-grey;
+  color: $white;
+  .tile__category,
+  .tile__date,
+  .tile__title a, 
+  .tile__tag-link{
+    color: $white;
+  }
+}
+
+.tile--grey-bg {
+  background: $lt-grey;
+  color: $dark-grey;
+  .tile__category,
+  .tile__tag-link {
+    color: $red;
+  }
+  .tile__date {
+    color: $grey;
+  }
+  .tile__title {
+    color: $dark-grey;
+  }
+}
+
+.tile__category {
+  font-size: 1.25rem;
+  line-height: 1.5;  
+}
+
+.tile__title{
+  font-size: 2rem;
+  line-height: 1.3125;
+  font-weight: 300;
+  margin-top: 80px;
+}
+
+.tile__date {
+  margin-left: 40px;
+}
+
+.tile__tags {
+  margin-top: auto;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  .tile__tag {
+    display: inline-block;
+    margin-right: 8px;
+    text-align: left;
+    padding: 0;
+  }
+  .tile__tag-link {
+
+  }
+}
