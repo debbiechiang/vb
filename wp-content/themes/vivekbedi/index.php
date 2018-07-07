@@ -8,8 +8,8 @@
   <div class="row">
     <main class="col-sm-8 main">
       <div class="module-header row">
-        <h2 class="module-title col-sm-8">Latest News</h2>
-        <a class="module-link down-1 col-sm-4" href="">See All News</a>
+        <h2 class="module-title col-xs-8">Latest News</h2>
+        <a class="module-link down-1 col-xs-4" href="">See All News</a>
       </div>
       <section class="tile-container">
         <article class="tile tile__1x tile--dark-bg">

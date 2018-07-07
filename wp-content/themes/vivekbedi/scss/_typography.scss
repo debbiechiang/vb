@@ -1,8 +1,12 @@
-body {
+html {
   font-family: 'Merriweather Sans', Helvetica, Arial, sans-serif;
-  font-size: 16px; 
+  font-size: 12px; 
   font-weight: 200;
   -webkit-font-smoothing: antialiased;
+
+  @include lg() {
+    font-size: 16px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

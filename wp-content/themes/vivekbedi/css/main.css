@@ -2265,11 +2265,16 @@ optgroup {
     order: 1;
   }
 }
-body {
+html {
   font-family: 'Merriweather Sans', Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 200;
   -webkit-font-smoothing: antialiased;
+}
+@media screen and (min-width: 1023px) {
+  html {
+    font-size: 16px;
+  }
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -2379,13 +2384,21 @@ h1 {
   display: flex;
   flex-direction: column;
   padding: 40px 30px 30px;
-  width: calc(50% - 10px);
-  margin: 0 20px 20px 0;
-  min-height: 400px;
+  margin: 0 0 20px 0;
+  min-height: 25rem;
 }
 .tile .tile__meta {
   display: flex;
   align-items: center;
+}
+.tile__1x {
+  width: 100%;
+}
+@media screen and (min-width: 1023px) {
+  .tile__1x {
+    width: calc(50% - 10px);
+    margin-right: 20px;
+  }
 }
 .tile__1x + .tile__1x {
   margin-right: 0;

@@ -1,3 +1,39 @@
+
+$lg-screen: 1440px; 
+$medium-screen: 1023px;
+$small-screen: 767px;
+$xs-screen: 320px;
+
+@mixin xs() {
+  @media screen and (max-width: $small-screen - 1) {
+    @content;
+  }
+}
+
+@mixin sm() {
+  @media screen and (min-width: $xs-screen) {
+    @content;
+  }
+}
+
+@mixin md() {
+  @media screen and (min-width: $small-screen) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media screen and (min-width: $medium-screen) {
+    @content;
+  }
+}
+
+@mixin xs() {
+  @media screen and (min-width: $lg-screen) {
+    @content;
+  }
+}
+
 // Set the number of columns you want to use on your layout.
 $flexboxgrid-grid-columns: 12 !default;
 // Set the gutter between columns.
