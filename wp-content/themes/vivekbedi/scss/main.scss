@@ -4,6 +4,8 @@
 @import "layout";
 @import "typography";
 
+@import "news";
+
 // GLOBAL
 html {
   box-sizing: border-box;
@@ -103,8 +105,9 @@ h1 {
 
 // MAIN
 .main {
-  padding: 70px 0;
+  padding: 70px 0 0 0;
 }
+
 .module-header {
   display: flex; 
   flex-direction: row;
@@ -139,13 +142,26 @@ h1 {
 .tile__1x {
   width: 100%;
 
-  @include lg() {
-    width: calc(50% - 10px);
-    margin-right: 20px;
+  .tile-2up & {
+    @include lg() {
+      width: calc(50% - 10px);
+      margin-right: 20px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
-  + .tile__1x {
-    margin-right: 0;
+  .tile-3up & {
+    @include lg() {
+      width: calc(33% - 10px);
+      margin-right: 20px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -223,7 +239,6 @@ h1 {
 
 // SIDEBAR
 .homepage-sidebar {
-  margin-top: 140px;
   .module-title {
     font-size: 2rem;
     line-height: 1.25;
