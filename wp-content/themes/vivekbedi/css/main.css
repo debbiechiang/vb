@@ -2271,6 +2271,11 @@ body {
   font-weight: 200;
   -webkit-font-smoothing: antialiased;
 }
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
 html {
   box-sizing: border-box;
 }
@@ -2283,6 +2288,10 @@ a {
 }
 a:visited {
   color: red;
+}
+ul {
+  margin: 0;
+  padding: 0;
 }
 ul li {
   list-style-type: none;
@@ -2353,9 +2362,7 @@ h1 {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-.module-header .module-header {
-  align-self: flex-start;
+  margin-bottom: 40px;
 }
 .module-header .module-title {
   align-self: flex-end;
@@ -2439,4 +2446,36 @@ h1 {
   margin-right: 8px;
   text-align: left;
   padding: 0;
+}
+.homepage-sidebar {
+  margin-top: 140px;
+}
+.homepage-sidebar .module-title {
+  font-size: 2rem;
+  line-height: 1.25;
+}
+.homepage-sidebar .sidebar__items .sidebar__item {
+  display: flex;
+  flex-direction: row;
+  padding: 45px 0 90px;
+  border-bottom: 2px solid #999;
+}
+.homepage-sidebar .sidebar__items .sidebar__item .sidebar__item-img {
+  margin-right: 30px;
+}
+.homepage-sidebar .sidebar__items .sidebar__item .sidebar__item-title {
+  font-size: 1.25rem;
+  line-height: 1.6667;
+  justify-self: flex-start;
+}
+.homepage-sidebar .sidebar__items .sidebar__item .sidebar__item-title a {
+  color: #222;
+}
+.homepage-sidebar .sidebar__see-more-link {
+  font-family: "Merriweather Sans";
+  font-size: 1.125rem;
+  letter-spacing: 0.23px;
+  line-height: 1.28;
+  display: inline-block;
+  margin-top: 20px;
 }

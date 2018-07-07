@@ -4,7 +4,7 @@
     <h1 class="hero__title">Hi, I'm Vivek Bedi. I am a passionate product leader who is obsessed with user experience.</p>
   </section>
 </div>
-<div class="wrapper container-fluid"
+<div class="wrapper container-fluid">
   <div class="row">
     <main class="col-sm-8 main">
       <div class="module-header row">
@@ -107,29 +107,26 @@
 
        </main><!-- /.blog-main -->
 
-       <aside class="col-sm-3 col-sm-offset-1 blog-sidebar">
-         <div class="sidebar-module sidebar-module-inset">
-           <h4>Speaking Engagements</h4>
-           <ol class="">
-             <li class="speaker-series">
-               <img src="" class="speaker-series__img" />
-               <a href="">Marquette University Speaker Series</a>
-             </li>
-             <li class="speaker-series">
-               <img src="" class="speaker-series__img" />
-               <a href="">Marquette University Speaker Series</a>
-             </li>
-             <li class="speaker-series">
-               <img src="" class="speaker-series__img" />
-               <a href="">Marquette University Speaker Series</a>
-             </li>
-             <li class="speaker-series">
-               <img src="" class="speaker-series__img" />
-               <a href="">Marquette University Speaker Series</a>
-             </li>
-           </ol>
-           <a href="" class="sidebar-link">See All Speaking Engagements.</a>
-         </div>
+       <aside class="col-sm-3 col-sm-offset-1 sidebar-module homepage-sidebar">
+         <h2 class="module-title">Speaking Engagements</h2>
+         <ul class="sidebar__items speaker-series">
+           <li class="sidebar__item">
+             <img src="http://placehold.it/70x140" class=" sidebar__item-img speaker-series__img" />
+             <h3 class="sidebar__item-title speaker-series__title">
+              <a href="">Marquette University Speaker Series</a></h3>
+           </li>
+           <li class="sidebar__item">
+             <img src="http://placehold.it/70x140" class=" sidebar__item-img speaker-series__img" />
+             <h3 class="sidebar__item-title speaker-series__title">
+              <a href="">Marquette University Speaker Series</a></h3>
+           </li>
+           <li class="sidebar__item">
+             <img src="http://placehold.it/70x140" class=" sidebar__item-img speaker-series__img" />
+             <h3 class="sidebar__item-title speaker-series__title">
+              <a href="">Marquette University Speaker Series</a></h3>
+           </li>
+         </ul>
+         <a href="" class="sidebar__see-more-link">See All Speaking Engagements</a>
        </div><!-- /.blog-sidebar -->
 
      </div><!-- /.row -->
