@@ -128,6 +128,10 @@ h1 {
 }
 
 // MAIN
+.row {
+  min-width: calc(100% + 20px);  
+}
+
 .main {
   padding: 70px 0 0 0;
 }
@@ -161,12 +165,6 @@ h1 {
   .tile__meta {
     display: flex;
     align-items: center;
-  }
-}
-
-.tile-2up {
-  .row {
-    min-width: calc(100% + 20px);
   }
 }
 
