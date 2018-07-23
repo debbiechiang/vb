@@ -2313,7 +2313,7 @@ h1 {
   line-height: 1.125;
   text-align: center;
 }
-p {
+.main p {
   font-family: "Merriweather Sans";
   font-size: 1.5rem;
   line-height: 2.0833;
@@ -2325,6 +2325,12 @@ p {
   top: 0;
   width: 100%;
 }
+@media screen and (min-width: 767px) {
+  .sticky-header .wrapper {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 .sticky-header.opaque {
   background: #fff;
 }
@@ -2335,13 +2341,18 @@ p {
   align-self: center;
   color: #e41d3c;
   display: inline-block;
-  font-size: 3.125rem;
+  font-size: 2.725rem;
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
   text-transform: lowercase;
 }
 .logomark span {
   font-weight: 700;
+}
+@media screen and (min-width: 767px) {
+  .logomark {
+    font-size: 3.125rem;
+  }
 }
 .logomark:hover, .logomark:active, .logomark:focus {
   text-decoration: none;
@@ -2401,6 +2412,9 @@ p {
 .tile .tile__meta {
   display: flex;
   align-items: center;
+}
+.tile-2up .row {
+  min-width: calc(100% + 20px);
 }
 .tile__1x {
   width: 100%;
@@ -2480,28 +2494,34 @@ p {
   text-align: left;
   padding: 0;
 }
-.homepage-sidebar .module-title {
+.sidebar-module .module-title {
   font-size: 2rem;
   line-height: 1.25;
 }
-.homepage-sidebar .sidebar__items .sidebar__item {
+.sidebar-module .sidebar__items .sidebar__item {
   display: flex;
   flex-direction: row;
   padding: 45px 0 90px;
   border-bottom: 2px solid #999;
 }
-.homepage-sidebar .sidebar__items .sidebar__item .sidebar__item-img {
+.sidebar-module .sidebar__items .sidebar__item .sidebar__item-img {
   margin-right: 30px;
 }
-.homepage-sidebar .sidebar__items .sidebar__item .sidebar__item-title {
+.sidebar-module .sidebar__items .sidebar__item .sidebar__item-title {
   font-size: 1.25rem;
   line-height: 1.6667;
   justify-self: flex-start;
 }
-.homepage-sidebar .sidebar__items .sidebar__item .sidebar__item-title a {
+.sidebar-module .sidebar__items .sidebar__item .sidebar__item-title a {
   color: #222;
 }
-.homepage-sidebar .sidebar__see-more-link {
+.sidebar-module .sidebar__items .sidebar__item .sidebar__item-info {
+  font-size: 1.125rem;
+}
+.sidebar-module .sidebar__items .sidebar__item.no-results {
+  padding-bottom: 45px;
+}
+.sidebar-module .sidebar__see-more-link {
   font-family: "Merriweather Sans";
   font-size: 1.125rem;
   letter-spacing: 0.23px;

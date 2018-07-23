@@ -26,19 +26,20 @@
           'posts_per_page' => '8'
         );
         $count = 0;
-         $custom_query = new WP_Query( $args );
-            while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
-              <?php if ($count%2 == 0): ?>
-                <div class="row">
-              <?php endif ?>
-              <?php get_template_part('speaking-engagements', get_post_format()); ?> 
-              <?php if ($count%2 == 1): ?>
-                </div>
-              <?php endif ?>
+        $custom_query = new WP_Query( $args );
+        while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
+          <?php if ($count%2 == 0): ?>
+            <div class="row">
+          <?php endif ?>
+          <?php get_template_part('speaking-engagements', get_post_format()); ?> 
+          <?php if ($count%2 == 1): ?>
+            </div>
+          <?php endif ?>
       <?php $count++; endwhile; ?> 
     </section>
 
-    <? get_sidebar(); ?>
+    <?php include('sidebar-speaking.php'); ?>
+
   </div>
 
   </main><!-- /.container -->

@@ -18,7 +18,7 @@
 
   <body>
     <header class="sticky-header">
-     <div class="wrapper container-fluid">
+     <div class="wrapper">
        <div class="nav-wrapper row">
         <a class="logomark" href="<?php echo get_bloginfo( 'wpurl' );?>"><span>Vivek</span>Bedi</a>
         <?php wp_nav_menu('menu=nav&menu_class=nav-items&container=nav'); ?>

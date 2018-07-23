@@ -36,7 +36,7 @@ h1 {
   @include h1();
 }
 
-p {
+.main p {
   @include body-p();
 }
 
@@ -47,6 +47,13 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
+  .wrapper {
+    @include md() {
+      margin-right: auto;
+      margin-left: auto;
+      // padding: 0 40px;
+    }
+  }
   &.opaque {
     background: $white;
     .nav-items li {
@@ -64,12 +71,15 @@ p {
   align-self: center;
   color: $red;
   display: inline-block;
-  font-size: 3.125rem;
+  font-size: 2.725rem;
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
   text-transform: lowercase;
   span {
     font-weight: 700;
+  }
+  @include md() {
+    font-size: 3.125rem;
   }
   &:hover,
   &:active, 
@@ -153,6 +163,13 @@ p {
     align-items: center;
   }
 }
+
+.tile-2up {
+  .row {
+    min-width: calc(100% + 20px);
+  }
+}
+
 .tile__1x {
   width: 100%;
 
@@ -252,7 +269,7 @@ p {
 }
 
 // SIDEBAR
-.homepage-sidebar {
+.sidebar-module {
   .module-title {
     font-size: 2rem;
     line-height: 1.25;
@@ -274,6 +291,12 @@ p {
         a {
           color: $dark-grey;
         }
+      }
+      .sidebar__item-info {
+        font-size: 1.125rem;
+      }
+      &.no-results {
+        padding-bottom: 45px;
       }
     }
   }
