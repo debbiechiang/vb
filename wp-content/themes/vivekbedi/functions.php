@@ -48,7 +48,7 @@
   add_theme_support( 'title-tag' );
 
   // Support Featured Images
-  add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'post-thumbnails', array('post', 'page') );
 
   function wp_startscripts() {
     wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400|Raleway:100,400,700,800', false ); 

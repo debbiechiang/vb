@@ -2282,6 +2282,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   font-weight: normal;
 }
+.about-sidebar {
+  padding-top: 70px;
+}
 html {
   box-sizing: border-box;
 }
