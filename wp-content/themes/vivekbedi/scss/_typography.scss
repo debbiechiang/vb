@@ -39,3 +39,9 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.23px;
   line-height: 1.28;
 }
+
+@mixin body-p() {
+  font-family: "Merriweather Sans";
+  font-size: 1.5rem;
+  line-height: 2.0833;
+}

@@ -2313,6 +2313,11 @@ h1 {
   line-height: 1.125;
   text-align: center;
 }
+p {
+  font-family: "Merriweather Sans";
+  font-size: 1.5rem;
+  line-height: 2.0833;
+}
 .sticky-header {
   display: block;
   padding: 0 30px;
@@ -2433,20 +2438,20 @@ h1 {
   background: #222;
   color: #fff;
 }
-.tile--dark-bg .tile__category, .tile--dark-bg .tile__date, .tile--dark-bg .tile__title a, .tile--dark-bg .tile__tag-link {
+.tile--dark-bg .tile__category a, .tile--dark-bg .tile__date, .tile--dark-bg .tile__title a, .tile--dark-bg .tile__tag-link a {
   color: #fff;
 }
 .tile--grey-bg {
   background: #eee;
   color: #222;
 }
-.tile--grey-bg .tile__category, .tile--grey-bg .tile__tag-link {
+.tile--grey-bg .tile__category a, .tile--grey-bg .tile__tag-link a {
   color: #e41d3c;
 }
 .tile--grey-bg .tile__date {
   color: #999;
 }
-.tile--grey-bg .tile__title {
+.tile--grey-bg .tile__title a {
   color: #222;
 }
 .tile__category {
@@ -2460,7 +2465,7 @@ h1 {
   margin-top: 80px;
 }
 .tile__date {
-  margin-left: 40px;
+  margin: -5px 0 0 40px;
 }
 .tile__tags {
   margin-top: auto;

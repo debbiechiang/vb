@@ -36,6 +36,10 @@ h1 {
   @include h1();
 }
 
+p {
+  @include body-p();
+}
+
 // NAV
 .sticky-header {
   display: block;
@@ -192,10 +196,10 @@ h1 {
 .tile--dark-bg {
   background: $dark-grey;
   color: $white;
-  .tile__category,
+  .tile__category a,
   .tile__date,
   .tile__title a, 
-  .tile__tag-link{
+  .tile__tag-link a{
     color: $white;
   }
 }
@@ -203,21 +207,21 @@ h1 {
 .tile--grey-bg {
   background: $lt-grey;
   color: $dark-grey;
-  .tile__category,
-  .tile__tag-link {
+  .tile__category a,
+  .tile__tag-link a {
     color: $red;
   }
   .tile__date {
     color: $grey;
   }
-  .tile__title {
+  .tile__title a {
     color: $dark-grey;
   }
 }
 
 .tile__category {
   font-size: 1.25rem;
-  line-height: 1.5;  
+  line-height: 1.5;
 }
 
 .tile__title{
@@ -228,7 +232,7 @@ h1 {
 }
 
 .tile__date {
-  margin-left: 40px;
+  margin: -5px 0 0 40px;
 }
 
 .tile__tags {

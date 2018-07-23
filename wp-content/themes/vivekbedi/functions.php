@@ -48,8 +48,35 @@
   add_theme_support( 'title-tag' );
 
   // Support Featured Images
-  add_theme_support( 'post-thumbnails', array('post', 'page') );
+  add_theme_support( 'post-thumbnails', array('post', 'page', 'speaking-engagement') );
 
+  // Custom Post Type -- Speaking Engagements
+  function create_speaking_engagements() {
+    register_post_type('speaking-engagement', 
+      array(
+        'labels' => array(
+          'name' => __('Speaking Engagements'),
+          'singular_name' => __('Speaking Engagement'),
+        ),
+        'public' => true,
+        'has-archive' => true,
+        'supports' => array(
+          'title',
+          'editor',
+          'thumbnail',
+          'post-thumbnails'
+        )
+      )
+    );
+
+    register_taxonomy_for_object_type('post_tag', 'speaking-engagement');
+    register_taxonomy_for_object_type('category', 'speaking-engagement');
+
+  }
+
+  add_action('init', 'create_speaking_engagements');
+
+  // Enqueue Scripts.
   function wp_startscripts() {
     wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400|Raleway:100,400,700,800', false ); 
     wp_enqueue_style('vb-styles', get_template_directory_uri().'/css/main.css');
