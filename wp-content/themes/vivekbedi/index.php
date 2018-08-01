@@ -16,6 +16,7 @@
 
   <div class="row">
     <section class="tile-container col-sm-8 tile-2up">
+      <?php get_template_part( 'content', get_post_format() ); ?>
       <div class="row">
         <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
         <?php hm_get_template_part('tile', ['bg' => 'grey-bg', 'width' => '1x']) ?>

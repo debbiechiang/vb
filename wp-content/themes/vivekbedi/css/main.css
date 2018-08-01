@@ -816,7 +816,7 @@ optgroup {
     flex-basis: 41.6666666667%;
     max-width: 41.6666666667%;
   }
-  .col-sm-6 {
+  .col-sm-6, .blog .hero-wrapper {
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -webkit-flex-grow: 0;
@@ -873,7 +873,7 @@ optgroup {
     flex-basis: 66.6666666667%;
     max-width: 66.6666666667%;
   }
-  .col-sm-9 {
+  .col-sm-9, .blog .main p:not(.full-width) {
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -webkit-flex-grow: 0;
@@ -994,7 +994,7 @@ optgroup {
     padding-left: 10px;
     margin-left: 16.6666666667%;
   }
-  .col-sm-offset-3 {
+  .col-sm-offset-3, .blog .main p:not(.full-width) {
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -webkit-flex-grow: 0;
@@ -2283,6 +2283,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 .about-sidebar {
   padding-top: 70px;
+}
+.blog .blog-hero {
+  color: #fff;
+}
+.blog h1 {
+  font-family: "Merriweather Sans";
+  font-size: 3.125rem;
+  line-height: 1;
+}
+.blog .hero__type {
+  color: #e41d3c;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.35px;
+  line-height: 1;
+}
+.blog .hero__date, .blog .hero__excerpt {
+  font-family: "Merriweather Sans";
+  font-size: 1.5rem;
+  line-height: 2.0833;
+}
+.blog .main p.full-width img {
+  max-width: 100%;
+  min-width: 100%;
 }
 html {
   box-sizing: border-box;

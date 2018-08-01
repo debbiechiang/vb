@@ -1,0 +1,36 @@
+.blog {
+  .blog-hero {
+    color: $white;
+  }
+  .hero-wrapper {
+    @extend .col-sm-6;
+  }
+
+  h1 {
+    @include h2();
+  }
+
+  .hero__type {
+    color: $red;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.35px;
+    line-height: 1;
+  }
+
+  .hero__date,
+  .hero__excerpt {
+    @include body-p();
+  }
+
+  .main {
+    p:not(.full-width) {
+      @extend .col-sm-9;
+      @extend .col-sm-offset-3;
+    }
+    p.full-width img {
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+}
