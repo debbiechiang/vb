@@ -3,8 +3,10 @@
  <div class="blog">
     <section class="hero blog-hero">
       <div class="hero-wrapper">
-        <div class="hero__type"><?php the_category(' ');?></div>
-        <div class="hero__date"><?php the_date(); ?></div>
+        <div class="hero__meta">
+          <div class="hero__type"><?php the_category(' ');?></div>
+          <div class="hero__date"><?php the_date(); ?></div>
+        </div>
         <h1 class="hero__title"><?php the_title(); ?></h1>
         <div class="hero__excerpt"><?php the_excerpt(); ?></div>
       </div>
@@ -13,7 +15,6 @@
       <div class="row">
         <?php include ('sidebar-post.php') ?>
         <section class="main">
-          <h2 class="module-title">Overview</h2>
           <?php the_content(); ?>
         </section>
       </div>

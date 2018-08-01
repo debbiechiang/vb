@@ -2,20 +2,30 @@
   .blog-hero {
     color: $white;
   }
+
   .hero-wrapper {
-    @extend .col-sm-6;
+    @extend .col-md-6;
   }
 
-  h1 {
+  .hero__title {
     @include h2();
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+  .hero__meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
   }
 
   .hero__type {
     color: $red;
     font-size: 1.25rem;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.35px;
     line-height: 1;
+    margin-right: 40px;
+    text-transform: uppercase;
   }
 
   .hero__date,
@@ -23,8 +33,22 @@
     @include body-p();
   }
 
+  .sidebar-post {
+    padding: 1rem;
+    border-width: 1px 0;
+    border-color: $grey;
+    border-style: solid;
+    margin-top: 70px;
+    @include md() {
+      @extend .col-sm-2;
+      position: absolute;
+      min-width: 16.66666667%;
+    }
+  }
+
   .main {
-    p:not(.full-width) {
+    p:not(.full-width),
+    h2, h1, h3, h4, h5, h6 {
       @extend .col-sm-9;
       @extend .col-sm-offset-3;
     }
