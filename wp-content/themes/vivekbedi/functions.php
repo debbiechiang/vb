@@ -47,6 +47,17 @@
   // WordPress Titles
   add_theme_support( 'title-tag' );
 
+  // Custom Header Images
+  $args = array(
+    'width'         => 980,
+    'height'        => 60,
+    'flex-width'    => true,
+    'flex-height'   => true,
+    'default-image' => get_template_directory_uri() . '/images/header.jpg',
+    'uploads'       => true,
+  );
+  add_theme_support( 'custom-header', $args );
+
   // Support Featured Images
   add_theme_support( 'post-thumbnails', array('post', 'page', 'speaking-engagement') );
 

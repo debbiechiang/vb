@@ -2,29 +2,38 @@
 
 <?php get_header(); ?>
  <div class="">
-  <section class="hero newspage row">
-    <h1 class="hero__title"><?php  ?></p>
-  </section>
-</div>
-<main class="wrapper container-fluid">
-  <div class="row">
-    <div class="col-xs-12 main">
-      <div class="module-header">
-        <h2 class="module-title">News</h2>
+
+  <?php 
+    $args =  array( 
+      'post_type' => 'post',
+      'orderby' => 'post_date',
+      'order' => 'DESC', 
+      'posts_per_page' => '9'
+    );
+    $postitem = 0;
+    $custom_query = new WP_Query( $args );
+    while($custom_query->have_posts()) : $custom_query->the_post();?>
+      <?php if($postitem === 0): ?> 
+        <section class="hero newspage row" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> '); background-size: cover;">
+          <div class="hero__info">
+            <h1 class="hero__title"><?php the_title(); ?></h1>
+            <p><?php the_excerpt() ?></p>
+            <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
+          </div>
+        </section>
+
       </div>
-    </div>
-  </div>
-  <section class="tile-container tile-3up">
-    <?php 
-      $args =  array( 
-        'post_type' => 'post',
-        'orderby' => 'date',
-        'order' => 'DESC', 
-        'posts_per_page' => '9'
-      );
-      $postitem = 0;
-      $custom_query = new WP_Query( $args );
-      while($custom_query->have_posts()) : $custom_query->the_post();?>
+      <main class="wrapper container-fluid">
+        <div class="row">
+          <div class="col-xs-12 main">
+            <div class="module-header">
+              <h2 class="module-title">News</h2>
+            </div>
+          </div>
+        </div>
+        <section class="tile-container tile-3up">
+        <?php endif; ?>
+
         <?php if($postitem%3 == 0): ?>
           <div class="row">
         <?php endif ?>
