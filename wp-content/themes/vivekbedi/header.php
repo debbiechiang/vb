@@ -20,7 +20,7 @@
     <header class="sticky-header">
      <div class="wrapper">
        <div class="nav-wrapper row">
-        <a class="logomark" href="<?php echo get_bloginfo( 'wpurl' );?>"><span>Vivek</span>Bedi</a>
+        <a class="logomark" href="<?php echo get_bloginfo( 'wpurl' );?>"><img src="<?php echo get_bloginfo('template_url') ?>/images/logo.svg"/></a>
         <?php wp_nav_menu('menu=nav&menu_class=nav-items&container=nav'); ?>
        </div>
      </div>

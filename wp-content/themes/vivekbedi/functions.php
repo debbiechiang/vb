@@ -78,7 +78,7 @@
 
   // Enqueue Scripts.
   function wp_startscripts() {
-    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400|Raleway:100,400,700,800', false ); 
+    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400', false ); 
     wp_enqueue_style('vb-styles', get_template_directory_uri().'/css/main.css');
     wp_register_script('scrollTrigger', get_template_directory_uri().'/js/scrollTrigger.js', array(), '1.0.0', true);
     wp_enqueue_script('vb-scripts', get_template_directory_uri().'/js/scripts.js', array('scrollTrigger'), '1.0.0', true);

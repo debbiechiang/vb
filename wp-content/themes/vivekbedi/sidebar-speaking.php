@@ -14,7 +14,7 @@
         <?php while ($upcoming->have_posts()) : $upcoming->the_post(); ?>
           <li class="sidebar__item">
             <div class="sidebar__item-img speaker-series__img">
-              <img src="http://placehold.it/70x140" />
+              <?php the_post_thumbnail('full');?>
             </div>
             <div class="sidebar__item-info">
               <h3 class="sidebar__item-title"><?php the_title() ?></h3>

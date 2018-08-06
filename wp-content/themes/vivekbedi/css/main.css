@@ -2284,6 +2284,9 @@ h1, h2, h3, h4, h5, h6 {
 .about-sidebar {
   padding-top: 70px;
 }
+.blog .blog-content {
+  min-height: 250px;
+}
 .blog .blog-hero {
   color: #fff;
 }
