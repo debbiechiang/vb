@@ -1,7 +1,7 @@
 <?php /* Template Name: News Page */?>
 
 <?php get_header(); ?>
- <div class="">
+ <div class="news">
 
   <?php 
     $args =  array( 
@@ -14,17 +14,17 @@
     $custom_query = new WP_Query( $args );
     while($custom_query->have_posts()) : $custom_query->the_post();?>
       <?php if($postitem === 0): ?> 
-        <section class="hero newspage row" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> '); ">
+        <section class="hero newspage" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> '); ">
           <div class="hero__info">
             <h1 class="hero__title"><?php the_title(); ?></h1>
-            <p><?php the_excerpt() ?></p>
+            <div class="hero__excerpt"><?php the_excerpt() ?></div>
             <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
           </div>
             <div class="hero-overlay" />
         </section>
 
       </div>
-      <main class="wrapper container-fluid">
+      <main class="content wrapper container-fluid">
         <div class="row">
           <div class="col-xs-12 main">
             <div class="module-header">

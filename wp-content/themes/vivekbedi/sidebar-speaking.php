@@ -1,4 +1,4 @@
-<aside class="col-xs-12 col-sm-3 col-sm-offset-1 sidebar-module speaking-sidebar">
+<aside class="col-xs-12 col-sm-5 col-md-3 col-sm-offset-1 sidebar-module speaking-sidebar">
   <h2 class="module-title">Upcoming</h2>
   <ul class="sidebar__items speaker-series">
     <?php 
@@ -23,7 +23,7 @@
                 <img src="<?php echo $featured_images[0]['thumb']?>"/>
               <?php else: ?>
                 <?php the_post_thumbnail('thumbnail'); ?>
-              <?php endif ?>
+              <?php endif;?>
             </div>
             <div class="sidebar__item-info">
               <h3 class="sidebar__item-title"><?php the_title() ?></h3>

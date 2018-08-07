@@ -1,4 +1,4 @@
-<aside class="col-xs-12 col-sm-3 col-sm-offset-1 sidebar-module homepage-sidebar">
+<aside class="col-xs-12 col-sm-5 col-md-3 col-sm-offset-1 sidebar-module homepage-sidebar">
   <h2 class="module-title">Speaking Engagements</h2>
   <ul class="sidebar__items speaker-series">
   <?php 

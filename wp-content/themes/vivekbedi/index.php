@@ -5,9 +5,9 @@
     <div class="hero-overlay" />
   </section>
 </div>
-<main class="wrapper container-fluid">
+<main class="wrapper content container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-sm-8 main">
+    <div class="col-xs-12 col-sm-6 col-md-8 main">
       <div class="module-header row">
         <h2 class="module-title col-xs-8">Latest News</h2>
         <a class="module-link down-1 col-xs-4" href="/news">See All News</a>
@@ -16,7 +16,7 @@
   </div>
 
   <div class="row">
-    <section class="tile-container col-sm-8 tile-2up">
+    <section class="tile-container col-sm-6 col-md-8 tile-2up">
       <?php 
         $args =  array( 
           'post_type' => 'post',

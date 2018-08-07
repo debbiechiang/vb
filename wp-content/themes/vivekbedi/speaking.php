@@ -13,7 +13,7 @@
     $custom_query = new WP_Query( $args );
     while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
       <?php if($count === 0): ?>
-        <section class="hero speaking row" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> ');">
+        <section class="hero speaking" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> ');">
           <div class="hero__info">
             <div class="hero__meta">
               <div class="hero__type"><?php the_category(' ');?></div>
@@ -25,18 +25,18 @@
           <div class="hero-overlay" />
         </section>
       </div>
-      <main class="wrapper container-fluid">
+      <main class="content wrapper container-fluid">
         <div class="row">
-          <div class="col-sm-8 main">
+          <div class="col-sm-6 col-md-8 main">
             <div class="module-header row">
-              <h2 class="module-title col-xs-8">Past Speaking Engagements</h2>
-              <a class="module-link down-1 col-xs-4" href="">See All Speaking Engagements</a>
+              <h2 class="module-title col-xs-8 col-sm-8">Past Speaking Engagements</h2>
+              <a class="module-link down-1 col-xs-4 col-sm-4" href="">See All Speaking Engagements</a>
             </div>
           </div>
         </div>
 
         <div class="row">
-          <section class="tile-container col-sm-8 tile-2up">
+          <section class="tile-container col-sm-6 col-md-8 tile-2up">
         <?php endif; ?>
 
           <?php if ($count%2 == 0): ?>

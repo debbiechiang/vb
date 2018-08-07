@@ -1,3 +1,21 @@
+.about {
+  .hero__info {
+    max-width: 600px;
+  }
+  .hero__title {
+    margin-bottom: 2.5rem;
+  }
+}
+
 .about-sidebar {
-  padding-top: 70px;
+  margin-top: 70px;
+  .module-title {
+    margin-bottom: 2rem;
+  }
+}
+
+.about-sidebar__thumbnail {
+  max-width: 100%;
+  min-width: 100%; 
+  margin-bottom: 70px;
 }

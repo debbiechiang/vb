@@ -2281,8 +2281,22 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   font-weight: normal;
 }
+.about .hero__info {
+  max-width: 600px;
+}
+.about .hero__title {
+  margin-bottom: 2.5rem;
+}
 .about-sidebar {
-  padding-top: 70px;
+  margin-top: 70px;
+}
+.about-sidebar .module-title {
+  margin-bottom: 2rem;
+}
+.about-sidebar__thumbnail {
+  max-width: 100%;
+  min-width: 100%;
+  margin-bottom: 70px;
 }
 .blog .hero {
   padding: 120px 0;
@@ -2380,6 +2394,9 @@ h1 {
   font-family: "Merriweather Sans";
   font-size: 1.5rem;
   line-height: 2.0833;
+}
+.main p:first-child {
+  margin-top: 0;
 }
 .sticky-header {
   display: block;
@@ -2532,6 +2549,9 @@ h1 {
 .row {
   min-width: calc(100% + 20px);
 }
+.content {
+  padding-bottom: 70px;
+}
 .main {
   padding: 70px 0 0 0;
 }
@@ -2577,7 +2597,7 @@ h1 {
 }
 @media screen and (min-width: 1023px) {
   .tile-3up .tile__1x {
-    width: calc(33% - 10px);
+    width: calc(33.3333% - 14px);
     margin-right: 20px;
   }
 }

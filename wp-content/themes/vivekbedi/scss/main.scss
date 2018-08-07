@@ -38,6 +38,9 @@ h1 {
 
 .main p {
   @include body-p();
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 // NAV
@@ -208,6 +211,10 @@ h1 {
   min-width: calc(100% + 20px);  
 }
 
+.content {
+  padding-bottom: 70px;
+}
+
 .main {
   padding: 70px 0 0 0;
 }
@@ -260,7 +267,7 @@ h1 {
 
   .tile-3up & {
     @include lg() {
-      width: calc(33% - 10px);
+      width: calc(33.3333% - 14px);
       margin-right: 20px;
     }
 
