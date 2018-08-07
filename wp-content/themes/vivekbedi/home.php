@@ -1,8 +1,16 @@
 <?php get_header(); ?>
-INDEX
  <div class="news">
-  <?php if ( have_posts() ): $postitem = 0; ?>
-   <?php while ( have_posts() ) : the_post(); ?>
+HOME
+  <?php 
+    $args =  array( 
+      'post_type' => 'post',
+      'orderby' => 'post_date',
+      'order' => 'DESC', 
+      'posts_per_page' => '9'
+    );
+    $postitem = 0;
+    $custom_query = new WP_Query( $args );
+    while($custom_query->have_posts()) : $custom_query->the_post();?>
       <?php if($postitem === 0): ?> 
         <section class="hero newspage" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> '); ">
           <div class="hero__info">
@@ -24,7 +32,7 @@ INDEX
         </div>
 
         <?php include('filters.php'); ?>
-        
+
         <section class="tile-container tile-3up">
         <?php endif; ?>
 
@@ -45,7 +53,7 @@ INDEX
           </div>
         <?php endif ?>
 
-    <?php $postitem++; endwhile; endif; ?>
+    <?php $postitem++; endwhile; ?>
   </section>
 </main><!-- /.container -->
   <?php get_template_part('newsletter') ?>

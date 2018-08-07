@@ -1,18 +1,7 @@
-<?php /* Template Name: News Page */?>
-
 <?php get_header(); ?>
  <div class="news">
-
-  <?php 
-    $args =  array( 
-      'post_type' => 'post',
-      'orderby' => 'post_date',
-      'order' => 'DESC', 
-      'posts_per_page' => '9'
-    );
-    $postitem = 0;
-    $custom_query = new WP_Query( $args );
-    while($custom_query->have_posts()) : $custom_query->the_post();?>
+  <?php if ( have_posts() ): $postitem = 0; ?>
+   <?php while ( have_posts() ) : the_post(); ?>
       <?php if($postitem === 0): ?> 
         <section class="hero newspage" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> '); ">
           <div class="hero__info">
@@ -40,8 +29,6 @@
               'show_option_none' => __( 'Tags' ),
               'show_count'       => 1,
               'orderby'          => 'name',
-              'name'             => 'tag',
-              'id'               => 'tag',
               'taxonomy'         => 'post_tag',
               'echo'             => 0,
             );
@@ -59,7 +46,28 @@
 
           </form>
 
-          
+          <form id="category-select" class="filter-dropdown category-select" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+
+            <?php
+            $args = array(
+              'show_option_none' => __( 'Content Type' ),
+              'show_count'       => 1,
+              'orderby'          => 'name',
+              'echo'             => 0,
+            );
+            ?>
+
+            <?php $select  = wp_dropdown_categories( $args ); ?>
+            <?php $replace = "<select$1 onchange='return this.form.submit()'>"; ?>
+            <?php $select  = preg_replace( '#<select([^>]*)>#', $replace, $select ); ?>
+
+            <?php echo $select; ?>
+
+            <noscript>
+              <input type="submit" value="View" />
+            </noscript>
+
+          </form>
 
           <form id="date-select" class="filter-dropdown date-select">
             <select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
@@ -89,7 +97,7 @@
           </div>
         <?php endif ?>
 
-    <?php $postitem++; endwhile; ?>
+    <?php $postitem++; endwhile; endif; ?>
   </section>
 </main><!-- /.container -->
   <?php get_template_part('newsletter') ?>

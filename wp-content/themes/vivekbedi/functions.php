@@ -89,6 +89,27 @@
 
   add_action('init', 'create_speaking_engagements');
 
+  add_filter('pre_get_posts', 'query_post_type');
+  function query_post_type($query) {
+    if( is_category() ) {
+      $post_type = get_query_var('post_type');
+      if($post_type)
+          $post_type = $post_type;
+      else
+          $post_type = array('nav_menu_item', 'post', 'speaking-engagement');
+      $query->set('post_type',$post_type);
+      return $query;
+  }}
+
+  function tag_filter($query) {
+    if ( !is_admin() && $query->is_main_query() ) {
+      if ($query->is_tag) {
+        $query->set('post_type', array( 'speaking-engagement', 'post', 'nav_menu_item' ));
+      }
+    }
+  }
+  add_action('pre_get_posts','tag_filter');
+
   // Enqueue Scripts.
   function wp_startscripts() {
     wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,600', false ); 
