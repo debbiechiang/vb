@@ -2715,3 +2715,10 @@ h1 {
   display: inline-block;
   margin-right: 8px;
 }
+.filters {
+  display: flex;
+  margin-left: 70px;
+}
+.filters .filter-dropdown {
+  margin-right: 20px;
+}

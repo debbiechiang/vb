@@ -408,3 +408,12 @@ h1 {
     }
   }
 }
+
+// FILTERS
+.filters {
+  display: flex;
+  margin-left: 70px;
+  .filter-dropdown {
+    margin-right: 20px;
+  }
+}

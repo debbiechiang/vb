@@ -1,6 +1,5 @@
 <?php get_header(); ?>
  <div class="news">
-HOME
   <?php 
     $args =  array( 
       'post_type' => 'post',
@@ -27,11 +26,11 @@ HOME
           <div class="col-xs-12 main">
             <div class="module-header">
               <h2 class="module-title">News</h2>
+              <?php include('filters.php'); ?>
             </div>
           </div>
         </div>
 
-        <?php include('filters.php'); ?>
 
         <section class="tile-container tile-3up">
         <?php endif; ?>

@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-INDEX
  <div class="news">
   <?php if ( have_posts() ): $postitem = 0; ?>
    <?php while ( have_posts() ) : the_post(); ?>
@@ -19,11 +18,11 @@ INDEX
           <div class="col-xs-12 main">
             <div class="module-header">
               <h2 class="module-title">News</h2>
+              <?php include('filters.php'); ?>
             </div>
           </div>
         </div>
 
-        <?php include('filters.php'); ?>
         
         <section class="tile-container tile-3up">
         <?php endif; ?>
