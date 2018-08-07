@@ -2,6 +2,7 @@
  <div class="">
   <section class="hero homepage" style="background-image: url(<?php header_image(); ?>)">
     <h1 class="hero__title"><?php echo get_bloginfo( 'description' ); ?></h1>
+    <div class="hero-overlay" />
   </section>
 </div>
 <main class="wrapper container-fluid">

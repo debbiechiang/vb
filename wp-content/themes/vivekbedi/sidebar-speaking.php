@@ -14,7 +14,16 @@
         <?php while ($upcoming->have_posts()) : $upcoming->the_post(); ?>
           <li class="sidebar__item">
             <div class="sidebar__item-img speaker-series__img">
-              <?php the_post_thumbnail('full');?>
+              <?php if(class_exists('Dynamic_Featured_Image')) {
+                global $dynamic_featured_image;
+                global $post;
+                $featured_images = $dynamic_featured_image->get_featured_images($post->ID);
+              } ?>
+              <?php if(!empty($featured_images)): ?>
+                <img src="<?php echo $featured_images[0]['thumb']?>"/>
+              <?php else: ?>
+                <?php the_post_thumbnail('thumbnail'); ?>
+              <?php endif ?>
             </div>
             <div class="sidebar__item-info">
               <h3 class="sidebar__item-title"><?php the_title() ?></h3>

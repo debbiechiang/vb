@@ -61,6 +61,7 @@
   // Support Featured Images
   add_theme_support( 'post-thumbnails', array('post', 'page', 'speaking-engagement') );
 
+
   // Custom Post Type -- Speaking Engagements
   function create_speaking_engagements() {
     register_post_type('speaking-engagement', 

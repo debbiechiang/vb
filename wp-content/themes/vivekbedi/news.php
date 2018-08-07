@@ -14,12 +14,13 @@
     $custom_query = new WP_Query( $args );
     while($custom_query->have_posts()) : $custom_query->the_post();?>
       <?php if($postitem === 0): ?> 
-        <section class="hero newspage row" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> '); background-size: cover;">
+        <section class="hero newspage row" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> '); ">
           <div class="hero__info">
             <h1 class="hero__title"><?php the_title(); ?></h1>
             <p><?php the_excerpt() ?></p>
             <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
           </div>
+            <div class="hero-overlay" />
         </section>
 
       </div>
