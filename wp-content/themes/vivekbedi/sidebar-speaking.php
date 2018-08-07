@@ -4,7 +4,7 @@
     <?php 
       $upcomingargs =  array( 
         'post_type' => 'speaking-engagement',
-        'tag' => 'upcoming',
+        'category' => 'upcoming',
         'orderby' => 'date',
         'order' => 'DESC', 
         'posts_per_page' => '3'

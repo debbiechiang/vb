@@ -1,7 +1,7 @@
 <?php /* Template Name: About Page */?>
 
 <?php get_header(); ?>
- <div class="">
+ <div class="about">
   <section class="hero aboutpage row">
     <h1 class="hero__title"><?php  ?></p>
   </section>

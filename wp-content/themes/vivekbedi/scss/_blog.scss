@@ -31,21 +31,21 @@
     margin-bottom: 1.5rem;
   }
 
-  .hero__type {
-    color: $red;
-    font-size: 1.25rem;
-    font-weight: 400;
-    letter-spacing: 0.35px;
-    line-height: 1;
-    margin-right: 40px;
-    text-transform: uppercase;
-  }
+  // .hero__type {
+  //   color: $red;
+  //   font-size: 1.25rem;
+  //   font-weight: 400;
+  //   letter-spacing: 0.35px;
+  //   line-height: 1;
+  //   margin-right: 40px;
+  //   text-transform: uppercase;
+  // }
 
-  .hero__date,
-  .hero__excerpt {
-    @include body-p();
-    line-height: 1.33333;
-  }
+  // .hero__date,
+  // .hero__excerpt {
+  //   @include body-p();
+  //   line-height: 1.33333;
+  // }
 
   .sidebar-post {
     padding: 1rem;

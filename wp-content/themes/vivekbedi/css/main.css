@@ -2315,21 +2315,6 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   margin-bottom: 1.5rem;
 }
-.blog .hero__type {
-  color: #e41d3c;
-  font-size: 1.25rem;
-  font-weight: 400;
-  letter-spacing: 0.35px;
-  line-height: 1;
-  margin-right: 40px;
-  text-transform: uppercase;
-}
-.blog .hero__date, .blog .hero__excerpt {
-  font-family: "Merriweather Sans";
-  font-size: 1.5rem;
-  line-height: 2.0833;
-  line-height: 1.33333;
-}
 .blog .sidebar-post {
   padding: 1rem;
   border-width: 1px 0;
@@ -2352,6 +2337,17 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.speaking .hero__type {
+  color: #f73f48;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.speaking .hero__title {
+  margin-bottom: 2.5rem;
+}
+.speaking .hero__info {
+  max-width: 600px;
+}
 html {
   box-sizing: border-box;
 }
@@ -2363,7 +2359,7 @@ a {
   color: #e41d3c;
 }
 a:visited {
-  color: red;
+  color: #e41d3c;
 }
 ul {
   margin: 0;
@@ -2376,6 +2372,7 @@ h1 {
   color: #fff;
   font-family: "Merriweather Sans";
   font-size: 2.75rem;
+  font-weight: 300;
   letter-spacing: 1.137;
   text-align: center;
 }
@@ -2441,12 +2438,14 @@ h1 {
 }
 .nav-items li a, .nav-items li a:visited, .nav-items li a:focus, .nav-items li a:active {
   color: #fff;
+  font-weight: 400;
 }
 .nav-items .current-menu-item {
   border-bottom: 2px solid #e41d3c;
 }
 .hero {
   background: #222;
+  color: #fff;
   padding: 210px 0;
   position: relative;
   background-position: 50% 50%;
@@ -2486,26 +2485,44 @@ h1 {
 }
 .hero__info {
   max-width: 500px;
-  z-index: 3;
+  color: #fff;
   margin: 0 auto;
   text-align: center;
   position: relative;
   z-index: 3;
 }
 .hero__title {
-  font-weight: 100;
+  font-weight: 400;
   max-width: 830px;
   margin: 0 auto;
   position: relative;
   z-index: 3;
+}
+.homepage .hero__title {
+  font-weight: 100;
+}
+.hero__type {
+  color: #e41d3c;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.35px;
+  line-height: 1;
+  margin-right: 40px;
+  text-transform: uppercase;
+}
+.hero__date, .hero__excerpt {
+  font-family: "Merriweather Sans";
+  font-size: 1.5rem;
+  line-height: 2.0833;
+  line-height: 1.33333;
 }
 .readmore {
   display: inline-block;
   margin: 2em auto;
   color: #fff;
   background: #e41d3c;
-  font-weight: 400;
-  padding: 1em 2em;
+  font-weight: 500;
+  padding: 1rem 3rem;
   text-transform: uppercase;
   font-size: 1.25rem;
 }

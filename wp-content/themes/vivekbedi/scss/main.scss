@@ -5,6 +5,7 @@
 @import "typography";
 @import "about";
 @import "blog";
+@import "speaking";
 
 // GLOBAL
 html {
@@ -19,7 +20,7 @@ a {
   color: $red;
 
   &:visited {
-    color: red;
+    color: $red;
   }
 }
 
@@ -110,6 +111,7 @@ h1 {
     a:focus,
     a:active {
       color: $white;
+      font-weight: 400;
     }
   }
   .current-menu-item {
@@ -117,13 +119,10 @@ h1 {
   }
 }
 
-.nav-item {
-
-}
-
 // HERO 
 .hero {
   background: $dark-grey;
+  color: $white;
   padding: 210px 0;
   position: relative;
   background-position: 50% 50%;
@@ -153,7 +152,7 @@ h1 {
 
 .hero__info {
   max-width: 500px;
-  z-index: 3;
+  color: $white;
   margin: 0 auto;
   text-align: center;
   position: relative;
@@ -161,11 +160,30 @@ h1 {
 }
 
 .hero__title {
-  font-weight: 100;
+  font-weight: 400;
   max-width: 830px;
   margin: 0 auto;
   position: relative;
   z-index: 3;
+  .homepage & {
+    font-weight: 100;
+  }
+}
+
+.hero__type {
+  color: $red;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.35px;
+  line-height: 1;
+  margin-right: 40px;
+  text-transform: uppercase;
+}
+
+.hero__date,
+.hero__excerpt {
+  @include body-p();
+  line-height: 1.33333;
 }
 
 .readmore {
@@ -173,8 +191,8 @@ h1 {
   margin: 2em auto;
   color: $white;
   background: $red;
-  font-weight: 400;
-  padding: 1em 2em;
+  font-weight: 500;
+  padding: 1rem 3rem;
   text-transform: uppercase; 
   font-size: 1.25rem;
   &:visited,
