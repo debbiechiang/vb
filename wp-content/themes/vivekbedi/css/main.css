@@ -1338,7 +1338,7 @@ optgroup {
     flex-basis: 41.6666666667%;
     max-width: 41.6666666667%;
   }
-  .col-md-6, .blog .hero-wrapper {
+  .col-md-6, .blog .blog-hero .hero__info {
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -webkit-flex-grow: 0;
@@ -2284,11 +2284,24 @@ h1, h2, h3, h4, h5, h6 {
 .about-sidebar {
   padding-top: 70px;
 }
+.blog .hero {
+  padding: 120px 0;
+}
 .blog .blog-content {
   min-height: 250px;
 }
 .blog .blog-hero {
   color: #fff;
+}
+.blog .blog-hero .hero__info {
+  margin-left: 0;
+  text-align: left;
+}
+@media screen and (min-width: 320px) {
+  .blog .blog-hero {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 .blog .hero__title {
   font-family: "Merriweather Sans";
@@ -2315,6 +2328,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Merriweather Sans";
   font-size: 1.5rem;
   line-height: 2.0833;
+  line-height: 1.33333;
 }
 .blog .sidebar-post {
   padding: 1rem;
@@ -2329,9 +2343,14 @@ h1, h2, h3, h4, h5, h6 {
     min-width: 16.66666667%;
   }
 }
+.blog .main h2 {
+  font-size: 2rem;
+}
 .blog .main p.full-width img {
   max-width: 100%;
   min-width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 html {
   box-sizing: border-box;
@@ -2444,12 +2463,12 @@ h1 {
 @media screen and (max-width: 766px) {
   .hero.homepage .hero__title {
     font-size: 2.75rem;
+    line-height: 1.25;
   }
 }
 @media screen and (max-width: 766px) {
   .hero {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 160px 10%;
   }
 }
 .hero-overlay:after {
@@ -2604,6 +2623,9 @@ h1 {
   margin-right: 8px;
   text-align: left;
   padding: 0;
+}
+.sidebar-module {
+  padding-bottom: 40px;
 }
 .sidebar-module .module-title {
   font-size: 2rem;

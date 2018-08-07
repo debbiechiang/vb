@@ -1,13 +1,23 @@
 .blog {
+  .hero {
+    padding: 120px 0;
+  }
+
   .blog-content {
     min-height: 250px;
   }
   .blog-hero {
     color: $white;
-  }
+    .hero__info {
+      @extend .col-md-6;
+      margin-left: 0;
+      text-align: left;
+    }
 
-  .hero-wrapper {
-    @extend .col-md-6;
+    @include sm() {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
   }
 
   .hero__title {
@@ -34,6 +44,7 @@
   .hero__date,
   .hero__excerpt {
     @include body-p();
+    line-height: 1.33333;
   }
 
   .sidebar-post {
@@ -55,9 +66,16 @@
       @extend .col-sm-9;
       @extend .col-sm-offset-3;
     }
+    
+    h2 {
+      font-size: 2rem;
+    }
+
     p.full-width img {
       max-width: 100%;
       min-width: 100%;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
   }
 }

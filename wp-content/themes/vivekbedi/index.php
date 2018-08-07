@@ -7,7 +7,7 @@
 </div>
 <main class="wrapper container-fluid">
   <div class="row">
-    <div class="col-sm-8 main">
+    <div class="col-xs-12 col-sm-8 main">
       <div class="module-header row">
         <h2 class="module-title col-xs-8">Latest News</h2>
         <a class="module-link down-1 col-xs-4" href="/news">See All News</a>

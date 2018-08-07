@@ -132,8 +132,7 @@ h1 {
     @include h1-hero();
   }
   @include xs() {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 160px 10%;
   }
 }
 .hero-overlay {
@@ -327,6 +326,7 @@ h1 {
 
 // SIDEBAR
 .sidebar-module {
+  padding-bottom: 40px;
   .module-title {
     font-size: 2rem;
     line-height: 1.25;
