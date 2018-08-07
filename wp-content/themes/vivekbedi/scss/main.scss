@@ -66,6 +66,12 @@ h1 {
     }
   }
 }
+@media screen and (max-width: 600px) {
+  #responsive-menu-container #responsive-menu, 
+  #responsive-menu-container #responsive-menu ul {
+    padding-top: 10%;
+  }
+}
 
 .logomark {
   align-self: center;
@@ -124,6 +130,10 @@ h1 {
   background-size: cover;
   &.homepage .hero__title {
     @include h1-hero();
+  }
+  @include xs() {
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 .hero-overlay {

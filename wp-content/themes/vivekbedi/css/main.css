@@ -2385,6 +2385,11 @@ h1 {
 .sticky-header.opaque .nav-items li a, .sticky-header.opaque .nav-items li a:focus, .sticky-header.opaque .nav-items li a:hover, .sticky-header.opaque .nav-items li a:visited {
   color: #222;
 }
+@media screen and (max-width: 600px) {
+  #responsive-menu-container #responsive-menu, #responsive-menu-container #responsive-menu ul {
+    padding-top: 10%;
+  }
+}
 .logomark {
   align-self: center;
   color: #e41d3c;
@@ -2435,6 +2440,17 @@ h1 {
   letter-spacing: 0.67px;
   line-height: 1.125;
   text-align: center;
+}
+@media screen and (max-width: 766px) {
+  .hero.homepage .hero__title {
+    font-size: 2.75rem;
+  }
+}
+@media screen and (max-width: 766px) {
+  .hero {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
 .hero-overlay:after {
   display: block;

@@ -28,7 +28,7 @@ $xs-screen: 320px;
   }
 }
 
-@mixin xs() {
+@mixin xl() {
   @media screen and (min-width: $lg-screen) {
     @content;
   }
