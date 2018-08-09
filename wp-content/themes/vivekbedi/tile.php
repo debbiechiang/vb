@@ -11,7 +11,7 @@
 
   <?php if ($template_args['width'] === '2x'): ?>
     <p class="tile__blurb"><?php the_excerpt();?></p>
-    <a href="" class="tile__read-more down-1">Read More</a>
+    <a href="<?php the_permalink(); ?>" class="tile__read-more down-1">Read More</a>
   <?php endif ?>
 
   <?php if ($template_args['width'] === '1x'): ?>
