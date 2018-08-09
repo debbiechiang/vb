@@ -2342,6 +2342,17 @@ h1, h2, h3, h4, h5, h6 {
     min-width: 16.66666667%;
   }
 }
+.blog .main {
+  min-width: 100%;
+}
+.blog .main div iframe {
+  height: 100%;
+  left: 0;
+  padding-bottom: 56.25%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
 .blog .main h2 {
   font-size: 2rem;
 }

@@ -61,6 +61,17 @@
   }
 
   .main {
+    min-width: 100%; 
+
+    div iframe {
+      height: 100%;
+      left: 0;
+      padding-bottom: 56.25%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
     p:not(.full-width),
     h2, h1, h3, h4, h5, h6 {
       @extend .col-sm-9;
