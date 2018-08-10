@@ -30,7 +30,7 @@
               <p class="sidebar__item-date"><?php the_date() ?></p>
             </div>
           </li>
-        <?php endwhile;?>
+        <?php wp_reset_postdata(); endwhile;?>
       <?php else: ?>
         <li class="sidebar__item no-results">
           No upcoming speaking engagements found.
@@ -38,4 +38,9 @@
       <?php endif; ?>
   </ul>
   <a href="" class="sidebar__see-more-link">See All Speaking Engagements</a>
+  <div class="sidebar__contact-me">
+    <h3><?php echo get_post_custom_values('speaking_sidebar_title')[0] ?></h3>
+    <p><?php echo get_post_custom_values('speaking_sidebar_blurb')[0] ?></p>
+    <a class="learn-more" href="/about">Learn More</a>
+  </div>
 </aside><!-- /.homepage-sidebar -->

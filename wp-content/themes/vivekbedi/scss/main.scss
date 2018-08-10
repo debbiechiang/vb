@@ -386,6 +386,28 @@ h1 {
     @include body();
     display: inline-block;
     margin-top: 20px;
+    margin-bottom: 45px;
+  }
+  .sidebar__contact-me {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    background-color: $lt-grey;
+    h3 {
+      font-size: 1.75rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      color: $dark-grey;
+    }
+    p {
+      font-size: 1.125rem;
+      line-height: 1.6667;
+      margin-bottom: 1.5rem;
+      color: $grey;
+    }
+    .learn-more {
+      font-size: 1.25rem;
+      margin-bottom: 0;
+    }
   }
 }
 

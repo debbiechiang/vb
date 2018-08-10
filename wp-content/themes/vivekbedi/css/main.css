@@ -2709,6 +2709,28 @@ h1 {
   line-height: 1.28;
   display: inline-block;
   margin-top: 20px;
+  margin-bottom: 45px;
+}
+.sidebar-module .sidebar__contact-me {
+  width: 100%;
+  padding: 2rem 1.5rem;
+  background-color: #eee;
+}
+.sidebar-module .sidebar__contact-me h3 {
+  font-size: 1.75rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #222;
+}
+.sidebar-module .sidebar__contact-me p {
+  font-size: 1.125rem;
+  line-height: 1.6667;
+  margin-bottom: 1.5rem;
+  color: #999;
+}
+.sidebar-module .sidebar__contact-me .learn-more {
+  font-size: 1.25rem;
+  margin-bottom: 0;
 }
 .newsletter-signup {
   padding: 40px 0;
