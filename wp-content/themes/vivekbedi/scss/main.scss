@@ -412,9 +412,46 @@ h1 {
 // FILTERS
 .filters {
   display: flex;
-  margin-left: 70px;
-  .filter-dropdown {
-    margin-right: 20px;
+  @include xs() {
+    flex-direction: column;
+    padding-top: 30px;
+  }
+
+  @include md() {
+    margin-left: 70px;
+    .filter-dropdown {
+      margin-right: 20px;
+    }
+  }
+}
+
+.module-header.has-filters {
+  flex-direction: column;
+  align-items: flex-start;
+  @include md() {
+    flex-direction: row;
+    align-items: center;
+  }
+  .module-title {
+    align-self: flex-start;
+  }
+  .filters {
+
+    width: 100%;
+    form {
+      margin-bottom: 1.25rem;
+      width: 100%;
+      @include md() {
+        width: auto;
+        margin-bottom: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    select {
+      width: 100%;
+    }
   }
 }
 

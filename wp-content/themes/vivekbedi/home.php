@@ -19,12 +19,11 @@
           </div>
             <div class="hero-overlay" />
         </section>
-
       </div>
       <main class="content wrapper container-fluid" role="main">
         <div class="row">
           <div class="col-xs-12 main">
-            <div class="module-header">
+            <div class="module-header has-filters">
               <h2 class="module-title">News</h2>
               <?php include('filters.php'); ?>
             </div>
