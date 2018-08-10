@@ -2344,16 +2344,18 @@ h1, h2, h3, h4, h5, h6 {
   border-width: 1px 0;
   border-color: #999;
   border-style: solid;
-  margin-top: 70px;
+  margin-bottom: 45px;
 }
 @media screen and (min-width: 767px) {
   .blog .sidebar-post {
     position: absolute;
-    min-width: 16.66666667%;
+    margin-top: 0;
+    min-width: 23%;
   }
 }
 .blog .main {
   min-width: 100%;
+  position: relative;
 }
 .blog .main div iframe {
   height: 100%;

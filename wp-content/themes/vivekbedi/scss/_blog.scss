@@ -52,16 +52,18 @@
     border-width: 1px 0;
     border-color: $grey;
     border-style: solid;
-    margin-top: 70px;
+    margin-bottom: 45px;
     @include md() {
       @extend .col-sm-2;
       position: absolute;
-      min-width: 16.66666667%;
+      margin-top: 0;
+      min-width: 23%;
     }
   }
 
   .main {
     min-width: 100%; 
+    position: relative; 
 
     div iframe {
       height: 100%;

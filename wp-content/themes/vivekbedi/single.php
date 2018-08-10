@@ -16,8 +16,8 @@
     </section>
     <main class="wrapper container-fluid blog-content">
       <div class="row">
-        <?php include ('sidebar-post.php') ?>
         <section class="main">
+        <?php include ('sidebar-post.php') ?>
           <?php the_content(); ?>
         </section>
       </div>
