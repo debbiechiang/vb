@@ -172,6 +172,16 @@
      
             $cat_out = (!empty($categories)) ? '<span class="cat-links"><span class="screen-reader-text">'.'</span>'.$category_out.'</span>' : '';
 
+            $tag_out = array();
+            $tags = get_the_tags();
+            foreach($tags as $tag_one) {
+              $tag_out[] = '<li class="tile__tag"><a href="' . esc_url( get_category_link( $tag_one->term_id ) ) . '" class="tile__tag-link down-1">' .$tag_one->name.'</a></li>';
+            }
+
+            $tag_out = implode(' ', $tag_out);
+            
+            $tag_out = (!empty($tags)) ? '<span class="cat-links"><span class="screen-reader-text">'.'</span>'.$tag_out.'</span>' : '';
+
             if($postitem%3 == 0): 
               $out .= '<div class="row">'; 
             endif; 
@@ -185,7 +195,7 @@
             endif; 
 
             $out .= '"><div class="tile__meta"><div class="tile__category down-1">'. $cat_out . '</div><div class="tile__date down-1">' . get_the_date() .'</div></div>
-              <h3 class="tile__title"><a href="'. get_the_permalink() .'">' . get_the_title().'</a></h3>'; 
+              <h3 class="tile__title"><a href="'. get_the_permalink() .'">' . get_the_title().'</a></h3><div class="tile__tags"><ul>' . $tag_out . '</ul></div>'; 
 
 
             $out .= '</article>';
