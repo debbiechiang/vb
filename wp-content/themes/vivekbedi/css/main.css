@@ -2293,6 +2293,16 @@ h1, h2, h3, h4, h5, h6 {
 .about-sidebar .module-title {
   margin-bottom: 2rem;
 }
+.about-sidebar .social-links li {
+  display: inline-block;
+}
+.about-sidebar .social-link {
+  color: grey;
+}
+.about-sidebar .social-link svg {
+  width: 2rem;
+  height: 2rem;
+}
 .about-sidebar__thumbnail {
   max-width: 100%;
   min-width: 100%;
@@ -2747,6 +2757,23 @@ h1 {
 .footer-content .social-links li {
   display: inline-block;
   margin-right: 8px;
+}
+.footer-content .social-links .social-link {
+  color: #999;
+}
+.footer-content .social-links .social-link svg {
+  width: 2rem;
+  height: 2rem;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 .filters {
   display: flex;

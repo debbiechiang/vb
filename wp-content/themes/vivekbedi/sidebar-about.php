@@ -13,19 +13,15 @@
   <h2 class="module-title">Follow Me</h2>
   <ul class="social-links">
     <li>
-      <a href="#" target="_blank">Facebook</a>
+      <a class="social-link" href="https://twitter.com/vivbedi" target="_blank">
+       <?php get_template_part('images/inline', 'twitter.svg'); ?>
+       <span class="sr-only">Twitter</span>
+     </a>
     </li>
     <li>
-      <a href="#" target="_blank">Twitter</a>
-    </li>
-    <li>
-      <a href="#" target="_blank">Instagram</a>
-    </li>
-    <li>
-     <a href="#" target="_blank">LinkedIn</a>
+     <a class="social-link" href="https://www.linkedin.com/in/vivekbedi" target="_blank">
+       <?php get_template_part('images/inline', 'linkedin.svg'); ?>
+     <span class="sr-only">LinkedIn</span></a>
    </li>
-   <li>
-      <a href="#" target="_blank">Google Plus</a>
-    </li>
   </ul>
 </aside> 

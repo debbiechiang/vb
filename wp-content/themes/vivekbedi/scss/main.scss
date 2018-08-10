@@ -428,7 +428,18 @@ h1 {
       display: inline-block;
       margin-right: 8px;
     }
+    .social-link {
+      color: $grey;
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
   }
+}
+
+.sr-only {
+  @include sr-only();
 }
 
 // FILTERS

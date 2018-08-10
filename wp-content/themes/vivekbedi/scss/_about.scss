@@ -12,6 +12,16 @@
   .module-title {
     margin-bottom: 2rem;
   }
+  .social-links li {
+    display: inline-block;
+  }
+  .social-link {
+    color: grey;
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
 }
 
 .about-sidebar__thumbnail {
