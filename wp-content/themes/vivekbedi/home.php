@@ -55,7 +55,9 @@
     <?php $postitem++; endwhile; ?>
   </section>
 
-  <div id="more_posts" data-category="<?php echo esc_attr($cat_id); ?>"><?php esc_html_e('Load More', 'vivekbedi') ?></div>
+  <div id="more_posts" data-category="<?php echo esc_attr($cat_id); ?>">
+    <a href="#" class="readmore"><?php esc_html_e('Load More', 'vivekbedi') ?></a>
+  </div>
 </main><!-- /.container -->
   <?php get_template_part('newsletter') ?>
 <?php get_footer(); ?>

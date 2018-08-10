@@ -2733,3 +2733,10 @@ h1 {
 .filters .filter-dropdown {
   margin-right: 20px;
 }
+#more_posts {
+  display: flex;
+}
+#more_posts a, #more_posts span {
+  margin-left: auto;
+  margin-right: auto;
+}

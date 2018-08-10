@@ -37,18 +37,17 @@ function load_ajax_posts() {
         'action': 'mytheme_more_post_ajax'
       },
       beforeSend : function () {
-        $loader.addClass('post_loading_loader').html('');
+        $loader.addClass('post_loading_loader').html("<a href='#' class='readmore'>" + screenReaderText.loading + "</a>");
       },
       success: function (data) {
         var $data = $(data);
         if ($data.length) {
-        console.log($data);
           var $newElements = $data.css({ opacity: 0 });
           $content.append($newElements);
           $newElements.animate({ opacity: 1 });
-          $loader.removeClass('post_loading_loader').html(screenReaderText.loadmore);
+          $loader.removeClass('post_loading_loader').html("<a href='#' class='readmore'>" + screenReaderText.loadmore + "</a>");
         } else {
-          $loader.removeClass('post_loading_loader').addClass('post_no_more_posts').html(screenReaderText.noposts);
+          $loader.removeClass('post_loading_loader').addClass('post_no_more_posts').html("<span>" + screenReaderText.noposts + "</span>");
         }
       },
       error : function (jqXHR, textStatus, errorThrown) {

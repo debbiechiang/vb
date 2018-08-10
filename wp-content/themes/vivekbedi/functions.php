@@ -129,8 +129,9 @@
       'expand'   => __( 'expand child menu', 'vivekbedi' ),
       'collapse' => __( 'collapse child menu', 'vivekbedi' ),
       'ajaxurl'  => $ajaxurl,
-      'noposts'  => esc_html__('No older posts found', 'vivekbedi'),
-      'loadmore' => esc_html__('Load more', 'vivekbedi')
+      'noposts'  => esc_html__('No older posts found.', 'vivekbedi'),
+      'loadmore' => esc_html__('Load more', 'vivekbedi'),
+      'loading'  => esc_html__('Loading...', 'vivekbedi')
     ) );
 
   }
@@ -139,7 +140,34 @@
   // LOAD MORE BUTTON
   add_action('wp_ajax_nopriv_mytheme_more_post_ajax', 'mytheme_more_post_ajax');
   add_action('wp_ajax_mytheme_more_post_ajax', 'mytheme_more_post_ajax');
-   
+  
+  function renderCategories() {
+    $category_out = array();
+    $categories = get_the_category();
+    foreach ($categories as $category_one) {
+      $category_out[] ='<a href="'.esc_url( get_category_link( $category_one->term_id ) ).'" class="'.strtolower($category_one->name).'">' .$category_one->name.'</a>';
+    }
+    $category_out = implode(', ', $category_out);
+    
+    $cat_out = (!empty($categories)) ? '<span class="cat-links"><span class="screen-reader-text">'.'</span>'.$category_out.'</span>' : '';
+
+    return $cat_out;
+  }
+
+  function renderTags() {
+    $tag_out = array();
+    $tags = get_the_tags();
+    foreach($tags as $tag_one) {
+      $tag_out[] = '<li class="tile__tag"><a href="' . esc_url( get_category_link( $tag_one->term_id ) ) . '" class="tile__tag-link down-1">' .$tag_one->name.'</a></li>';
+    }
+
+    $tag_out = implode(' ', $tag_out);
+    
+    $tag_out = (!empty($tags)) ? '<span class="cat-links"><span class="screen-reader-text">'.'</span>'.$tag_out.'</span>' : '';
+
+    return $tag_out;
+  }
+
   if (!function_exists('mytheme_more_post_ajax')) {
     function mytheme_more_post_ajax(){
    
@@ -163,24 +191,8 @@
           while ($loop -> have_posts()) :
             $loop -> the_post();
 
-            $category_out = array();
-            $categories = get_the_category();
-            foreach ($categories as $category_one) {
-              $category_out[] ='<a href="'.esc_url( get_category_link( $category_one->term_id ) ).'" class="'.strtolower($category_one->name).'">' .$category_one->name.'</a>';
-            }
-            $category_out = implode(', ', $category_out);
-     
-            $cat_out = (!empty($categories)) ? '<span class="cat-links"><span class="screen-reader-text">'.'</span>'.$category_out.'</span>' : '';
-
-            $tag_out = array();
-            $tags = get_the_tags();
-            foreach($tags as $tag_one) {
-              $tag_out[] = '<li class="tile__tag"><a href="' . esc_url( get_category_link( $tag_one->term_id ) ) . '" class="tile__tag-link down-1">' .$tag_one->name.'</a></li>';
-            }
-
-            $tag_out = implode(' ', $tag_out);
-            
-            $tag_out = (!empty($tags)) ? '<span class="cat-links"><span class="screen-reader-text">'.'</span>'.$tag_out.'</span>' : '';
+            $categoryList = renderCategories();
+            $tagList = renderTags();
 
             if($postitem%3 == 0): 
               $out .= '<div class="row">'; 
@@ -194,8 +206,8 @@
               $out .= 'grey-bg';
             endif; 
 
-            $out .= '"><div class="tile__meta"><div class="tile__category down-1">'. $cat_out . '</div><div class="tile__date down-1">' . get_the_date() .'</div></div>
-              <h3 class="tile__title"><a href="'. get_the_permalink() .'">' . get_the_title().'</a></h3><div class="tile__tags"><ul>' . $tag_out . '</ul></div>'; 
+            $out .= '"><div class="tile__meta"><div class="tile__category down-1">'. $categoryList . '</div><div class="tile__date down-1">' . get_the_date() .'</div></div>
+              <h3 class="tile__title"><a href="'. get_the_permalink() .'">' . get_the_title().'</a></h3><div class="tile__tags"><ul>' . $tagList . '</ul></div>'; 
 
 
             $out .= '</article>';
