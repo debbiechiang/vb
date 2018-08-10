@@ -115,7 +115,91 @@
     wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,600', false ); 
     wp_enqueue_style('vb-styles', get_template_directory_uri().'/css/main.css');
     wp_register_script('scrollTrigger', get_template_directory_uri().'/js/scrollTrigger.js', array(), '1.0.0', true);
-    wp_enqueue_script('vb-scripts', get_template_directory_uri().'/js/scripts.js', array('scrollTrigger'), '1.0.0', true);
+    wp_enqueue_script('vb-scripts', get_template_directory_uri().'/js/scripts.js', array('scrollTrigger', 'jquery'), '1.0.0', true);
+
+
+    $ajaxurl = '';
+    if( in_array('sitepress-multilingual-cms/sitepress.php', get_option('active_plugins')) ){
+      $ajaxurl .= admin_url( 'admin-ajax.php?lang=' . ICL_LANGUAGE_CODE );
+    } else{
+      $ajaxurl .= admin_url( 'admin-ajax.php');
+    }
+
+    wp_localize_script( 'vb-scripts', 'screenReaderText', array(
+      'expand'   => __( 'expand child menu', 'vivekbedi' ),
+      'collapse' => __( 'collapse child menu', 'vivekbedi' ),
+      'ajaxurl'  => $ajaxurl,
+      'noposts'  => esc_html__('No older posts found', 'vivekbedi'),
+      'loadmore' => esc_html__('Load more', 'vivekbedi')
+    ) );
+
   }
   add_action( 'wp_enqueue_scripts', 'wp_startscripts' );
+
+  // LOAD MORE BUTTON
+  add_action('wp_ajax_nopriv_mytheme_more_post_ajax', 'mytheme_more_post_ajax');
+  add_action('wp_ajax_mytheme_more_post_ajax', 'mytheme_more_post_ajax');
+   
+  if (!function_exists('mytheme_more_post_ajax')) {
+    function mytheme_more_post_ajax(){
+   
+        $ppp     = (isset($_POST['ppp'])) ? $_POST['ppp'] : 3;
+        $cat     = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
+        $offset  = (isset($_POST['offset'])) ? $_POST['offset'] : 0;
+   
+        $args = array(
+            'post_type'      => 'post',
+            'posts_per_page' => $ppp,
+            'cat'            => $cat,
+            'offset'          => $offset,
+        );
+   
+        $loop = new WP_Query($args);
+    
+        $out = '';
+
+        if ($loop -> have_posts()) :
+          $postitem = 0; 
+          while ($loop -> have_posts()) :
+            $loop -> the_post();
+
+            $category_out = array();
+            $categories = get_the_category();
+            foreach ($categories as $category_one) {
+              $category_out[] ='<a href="'.esc_url( get_category_link( $category_one->term_id ) ).'" class="'.strtolower($category_one->name).'">' .$category_one->name.'</a>';
+            }
+            $category_out = implode(', ', $category_out);
+     
+            $cat_out = (!empty($categories)) ? '<span class="cat-links"><span class="screen-reader-text">'.'</span>'.$category_out.'</span>' : '';
+
+            if($postitem%3 == 0): 
+              $out .= '<div class="row">'; 
+            endif; 
+
+            $out .= '<article class="tile tile__1x tile--';
+
+            if($postitem%2 == 1): 
+              $out .= 'dark-bg';
+            else:
+              $out .= 'grey-bg';
+            endif; 
+
+            $out .= '"><div class="tile__meta"><div class="tile__category down-1">'. $cat_out . '</div><div class="tile__date down-1">' . get_the_date() .'</div></div>
+              <h3 class="tile__title"><a href="'. get_the_permalink() .'">' . get_the_title().'</a></h3>'; 
+
+
+            $out .= '</article>';
+
+            if($postitem%3 == 2):
+              $out .= '</div>'; 
+            endif;
+            $postitem++;
+          endwhile; 
+        endif;
+
+        wp_reset_postdata();
+
+        wp_die($out);
+      }
+    }
 ?>

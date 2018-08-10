@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header(); $cat_id = get_query_var('cat');?>
  <div class="news">
   <?php 
     $args =  array( 
@@ -21,7 +21,7 @@
         </section>
 
       </div>
-      <main class="content wrapper container-fluid">
+      <main class="content wrapper container-fluid" role="main">
         <div class="row">
           <div class="col-xs-12 main">
             <div class="module-header">
@@ -32,7 +32,7 @@
         </div>
 
 
-        <section class="tile-container tile-3up">
+        <section class="tile-container tile-3up ajax_posts">
         <?php endif; ?>
 
         <?php if($postitem%3 == 0): ?>
@@ -54,6 +54,8 @@
 
     <?php $postitem++; endwhile; ?>
   </section>
+
+  <div id="more_posts" data-category="<?php echo esc_attr($cat_id); ?>"><?php esc_html_e('Load More', 'vivekbedi') ?></div>
 </main><!-- /.container -->
   <?php get_template_part('newsletter') ?>
 <?php get_footer(); ?>
