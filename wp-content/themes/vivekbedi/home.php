@@ -9,7 +9,11 @@
     );
     $postitem = 0;
     $custom_query = new WP_Query( $args );
-    while($custom_query->have_posts()) : $custom_query->the_post();?>
+    while($custom_query->have_posts()) : $custom_query->the_post();
+      if(has_post_thumbnail($post->ID)) {
+        $bgimg = wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'medium_large' ); 
+      };
+      ?>
       <?php if($postitem === 0): ?> 
         <section class="hero newspage" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> '); ">
           <div class="hero__info">
@@ -37,7 +41,9 @@
         <?php if($postitem%3 == 0): ?>
           <div class="row">
         <?php endif ?>
-        <article class="tile tile__1x tile--<?php if($postitem%2 == 0) { echo "dark-bg";} else {echo "grey-bg"; } ?>">
+        <article class="tile tile__1x tile--<?php if($postitem%2 == 0) { echo "dark-bg";} else {echo "grey-bg"; } ?>"
+          style="<?php if($postitem%2 == 0) echo 'background-image: url('. $bgimg .'?>);'?>"
+        >
             <div class="tile__meta"> 
               <div class="tile__category down-1"><?php the_category(' ') ?></div>
               <div class="tile__date down-1"><?php the_date() ?></div>

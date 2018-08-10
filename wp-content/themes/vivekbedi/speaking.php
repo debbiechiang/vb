@@ -47,7 +47,12 @@
       );
       $count = 0;
       $custom_query = new WP_Query( $args );
-      while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
+      while ($custom_query->have_posts()) : $custom_query->the_post();
+
+      if(has_post_thumbnail($post->ID)) {
+        $bgimg = wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'medium_large' ); 
+      }
+       ?>
       <?php if(!$hasUpcoming && $count === 0): ?>
         <section class="hero speaking" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> ');">
           <div class="hero__info">
@@ -78,7 +83,8 @@
           <?php if ($count%2 == 0): ?>
             <div class="row">
           <?php endif ?>
-          <?php get_template_part('speaking-engagements', get_post_format()); ?> 
+          <?php set_query_var( 'bgimg', $bgimg );
+            get_template_part('speaking-engagements', get_post_format()); ?> 
           <?php if ($count%2 == 1): ?>
             </div>
           <?php endif ?>

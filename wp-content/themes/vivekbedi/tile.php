@@ -1,5 +1,8 @@
 
-<article class="tile tile__<?php echo $template_args['width']?> tile--<?php echo $template_args['bg'] ?>">
+<article 
+  class="tile tile__<?php echo $template_args['width']?> tile--<?php echo $template_args['bg'] ?>"
+  style="<?php if ($template_args['bg'] === 'dark-bg') echo 'background-image: url('.$template_args["bgimg"] .'?>);'?>"
+  >
   <?php if ($template_args['width'] === '1x'): ?>
     <div class="tile__meta">
       <a href="" class="tile__category down-1"><?php the_category(' ') ?></a>

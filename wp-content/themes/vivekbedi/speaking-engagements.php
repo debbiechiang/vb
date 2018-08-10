@@ -1,4 +1,5 @@
-<article class="tile tile__1x tile--dark-bg">
+<article class="tile tile__1x tile--dark-bg" 
+style="<?php echo 'background-image: url('. $bgimg .'?>);'?>">
     <div class="tile__meta">
       <div class="tile__category down-1"><?php the_category(' ') ?></div>
       <div class="tile__date down-1"><?php the_date() ?></div>

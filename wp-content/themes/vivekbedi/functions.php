@@ -191,6 +191,10 @@
           while ($loop -> have_posts()) :
             $loop -> the_post();
 
+            if(has_post_thumbnail($post->ID)) {
+              $bgimg = wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'medium_large' ); 
+            };
+
             $categoryList = renderCategories();
             $tagList = renderTags();
 
@@ -201,7 +205,7 @@
             $out .= '<article class="tile tile__1x tile--';
 
             if($postitem%2 == 1): 
-              $out .= 'dark-bg';
+              $out .= 'dark-bg" style="background-image: url('. $bgimg .');';
             else:
               $out .= 'grey-bg';
             endif; 

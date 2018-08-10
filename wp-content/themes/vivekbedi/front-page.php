@@ -26,10 +26,14 @@
         );
         $postitem = 0;
         $custom_query = new WP_Query( $args );
-        while($custom_query->have_posts()) : $custom_query->the_post();?> 
+        while($custom_query->have_posts()) : $custom_query->the_post();
+          if(has_post_thumbnail($post->ID)) {
+            $bgimg = wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'medium_large' ); 
+          }
+        ?> 
           <?php if($postitem === 0): ?>
             <div class="row">
-              <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
+              <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x', 'bgimg' => $bgimg]) ?>
             <?php elseif ($postitem === 1): ?>
                 <?php hm_get_template_part('tile', ['bg' => 'grey-bg', 'width' => '1x']) ?>
               </div>
@@ -39,7 +43,7 @@
               </div>
               <div class="row">
             <?php elseif ($postitem === 3): ?>
-              <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
+              <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x', 'bgimg' => $bgimg]) ?>
             <?php elseif ($postitem === 4): ?>
               <?php hm_get_template_part('tile', ['bg' => 'grey-bg', 'width' => '1x']) ?>
             </div>

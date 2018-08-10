@@ -2638,7 +2638,26 @@ h1 {
 }
 .tile--dark-bg {
   background: #222;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
   color: #fff;
+}
+.tile--dark-bg:after {
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, .3);
+  z-index: 2;
+}
+.tile--dark-bg .tile__meta, .tile--dark-bg .tile__title, .tile--dark-bg .tile__tags {
+  z-index: 3;
 }
 .tile--dark-bg .tile__category a, .tile--dark-bg .tile__date, .tile--dark-bg .tile__title a, .tile--dark-bg .tile__tag-link a {
   color: #fff;
