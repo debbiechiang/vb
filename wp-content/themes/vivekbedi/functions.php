@@ -212,8 +212,8 @@
                 $out .= 'grey-bg';
               endif; 
 
-              $out .= '"><div class="tile__meta"><div class="tile__category down-1">'. $categoryList . '</div><div class="tile__date down-1">' . get_the_date() .'</div></div>
-                <h3 class="tile__title"><a href="'. get_the_permalink() .'">' . get_the_title().'</a></h3><div class="tile__tags"><ul>' . $tagList . '</ul></div>'; 
+              $out .= '"><div class="tile__meta"><div class="tile__category down-1">'.  $categoryList . '</div><div class="tile__date down-1">' . get_the_date() .'</div></div>
+                <h3 class="tile__title"><a href="'. get_the_permalink() .'">'. get_the_title().'</a></h3><div class="tile__tags"><ul>' . $tagList . '</ul></div>'; 
 
 
               $out .= '</article>';
