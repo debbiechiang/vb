@@ -4,6 +4,7 @@
     $args =  array( 
       'post_type' => 'post',
       'orderby' => 'post_date',
+      'cat' => $cat_id,
       'order' => 'DESC', 
       'posts_per_page' => '9'
     );
@@ -60,7 +61,7 @@
     <?php $postitem++; endwhile; ?>
   </section>
 
-  <div id="more_posts" data-category="<?php echo esc_attr($cat_id); ?>">
+  <div id="more_posts" data-queryname="cat" data-queryvalue="<?php echo $cat_id ?>" data-perrow="3">
     <a href="#" class="readmore"><?php esc_html_e('Load More', 'vivekbedi') ?></a>
   </div>
 </main><!-- /.container -->

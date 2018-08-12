@@ -10,7 +10,7 @@
       'order' => 'DESC', 
       'posts_per_page' => '1',
       'cat' => 11 // 'Upcoming' category.
-    ));
+    )); 
 
     if ($query->have_posts()) : $query-> the_post(); $hasUpcoming = true; ?>
         <section class="hero speaking" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> ');">
@@ -42,7 +42,7 @@
       $args =  array( 
         'post_type' => 'speaking-engagement',
         'orderby' => 'date',
-        'order' => 'DESC', 
+        'order' => 'DESC',  
         'posts_per_page' => '8',
       );
       $count = 0;
@@ -93,11 +93,9 @@
           <?php endif ?>
       <?php $count++; endwhile; ?> 
     </section>
-
     <?php include('sidebar-speaking.php'); ?>
-
   </div>
-  <div id="more_posts" data-category="<?php echo esc_attr($cat_id); ?>" data-perrow="2">
+  <div id="more_posts" data-posttype="speaking-engagement"data-perrow="2">
     <a href="#" class="readmore"><?php esc_html_e('Load More', 'vivekbedi') ?></a>
   </div>
   </main><!-- /.container -->

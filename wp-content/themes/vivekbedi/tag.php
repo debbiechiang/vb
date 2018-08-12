@@ -1,7 +1,20 @@
-<?php get_header();?>
+<?php get_header(); $tag_id = get_query_var('tag_id');?>
  <div class="news">
-  <?php if ( have_posts() ): $postitem = 0; ?>
-   <?php while ( have_posts() ) : the_post(); ?>
+  <?php 
+    $args =  array( 
+      'post_type' => 'post',
+      'orderby' => 'post_date',
+      'tag_id' => $tag_id,
+      'order' => 'DESC', 
+      'posts_per_page' => '9'
+    );
+    $postitem = 0;
+    $custom_query = new WP_Query( $args );
+    while($custom_query->have_posts()) : $custom_query->the_post();
+      if(has_post_thumbnail($post->ID)) {
+        $bgimg = wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'medium_large' ); 
+      };
+      ?>
       <?php if($postitem === 0): ?> 
         <section class="hero newspage" style="background-image: url('<?php echo wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'full' ); ?> '); ">
           <div class="hero__info">
@@ -11,9 +24,8 @@
           </div>
             <div class="hero-overlay" />
         </section>
-
       </div>
-      <main class="content wrapper container-fluid">
+      <main class="content wrapper container-fluid" role="main">
         <div class="row">
           <div class="col-xs-12 main">
             <div class="module-header has-filters">
@@ -23,14 +35,16 @@
           </div>
         </div>
 
-        
+
         <section class="tile-container tile-3up ajax_posts">
         <?php endif; ?>
 
         <?php if($postitem%3 == 0): ?>
           <div class="row">
         <?php endif ?>
-        <article class="tile tile__1x tile--<?php if($postitem%2 == 0) { echo "dark-bg";} else {echo "grey-bg"; } ?>">
+        <article class="tile tile__1x tile--<?php if($postitem%2 == 0) { echo "dark-bg";} else {echo "grey-bg"; } ?>"
+          style="<?php if($postitem%2 == 0) echo 'background-image: url('. $bgimg .'?>);'?>"
+        >
             <div class="tile__meta"> 
               <div class="tile__category down-1"><?php the_category(' ') ?></div>
               <div class="tile__date down-1"><?php the_date() ?></div>
@@ -44,10 +58,10 @@
           </div>
         <?php endif ?>
 
-    <?php $postitem++; endwhile; endif; ?>
+    <?php $postitem++; endwhile; ?>
   </section>
 
-  <div id="more_posts" data-posttype="post" data-perrow="3">
+  <div id="more_posts" data-queryname="tag_id" data-queryvalue="<?php echo $tag_id ?>" data-perrow="3">
     <a href="#" class="readmore"><?php esc_html_e('Load More', 'vivekbedi') ?></a>
   </div>
 </main><!-- /.container -->

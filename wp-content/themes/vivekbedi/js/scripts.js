@@ -18,7 +18,10 @@ if (blogContentImages) {
 (function($) {
 var $content = $('.ajax_posts');
 var $loader = $('#more_posts');
-var cat = $loader.data('category');
+var postType = $loader.data('posttype');
+var queryName = $loader.data('queryname');
+var queryValue = $loader.data('queryvalue');
+
 var ppp = 6;
 var offset = $('.tile-container').find('.tile').length;
 var perrow = $loader.data('perrow');
@@ -32,7 +35,9 @@ function load_ajax_posts() {
       dataType: 'html',
       url: screenReaderText.ajaxurl,
       data: {
-        'cat': cat,
+        'queryname': queryName,
+        'queryvalue': queryValue,
+        'post_type': postType,
         'ppp': ppp,
         'offset': offset,
         'perrow': perrow,

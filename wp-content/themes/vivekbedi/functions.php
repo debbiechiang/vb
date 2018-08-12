@@ -172,20 +172,25 @@
     function mytheme_more_post_ajax(){
    
         $ppp     = (isset($_POST['ppp'])) ? $_POST['ppp'] : 3;
-        $cat     = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
         $perrow  = (isset($_POST['perrow'])) ? $_POST['perrow'] : 3; 
         $offset  = (isset($_POST['offset'])) ? $_POST['offset'] : 0;
-   
+        $posttype = (isset($_POST['post_type'])) ? $_POST['post_type'] : array('post', 'speaking-engagement');
+        $queryName = (isset($_POST['queryname'])) ? $_POST['queryname'] : null;
+        $queryValue = (isset($_POST['queryvalue'])) ? $_POST['queryvalue'] : null;
+
         $args = array(
-            'post_type'      => 'post',
             'posts_per_page' => $ppp,
-            'cat'            => $cat,
             'offset'          => $offset,
+            'post_type'     => $posttype
         );
+
+        if ($queryName && $queryValue) {
+          $args[$queryName] = $queryValue;
+        };
    
         $loop = new WP_Query($args);
     
-        $out = '';
+        $out = '';  
 
         if ($loop -> have_posts()) :
           $postitem = 0; 
