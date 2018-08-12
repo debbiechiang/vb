@@ -173,6 +173,7 @@
    
         $ppp     = (isset($_POST['ppp'])) ? $_POST['ppp'] : 3;
         $cat     = (isset($_POST['cat'])) ? $_POST['cat'] : 0;
+        $perrow  = (isset($_POST['perrow'])) ? $_POST['perrow'] : 3; 
         $offset  = (isset($_POST['offset'])) ? $_POST['offset'] : 0;
    
         $args = array(
@@ -198,27 +199,42 @@
             $categoryList = renderCategories();
             $tagList = renderTags();
 
-            if($postitem%3 == 0): 
-              $out .= '<div class="row">'; 
-            endif; 
+            if($perrow == '3') {
+              if($postitem%3 == 0): 
+                $out .= '<div class="row">'; 
+              endif; 
 
-            $out .= '<article class="tile tile__1x tile--';
+              $out .= '<article class="tile tile__1x tile--';
 
-            if($postitem%2 == 1): 
-              $out .= 'dark-bg" style="background-image: url('. $bgimg .');';
-            else:
-              $out .= 'grey-bg';
-            endif; 
+              if($postitem%2 == 1): 
+                $out .= 'dark-bg" style="background-image: url('. $bgimg .');';
+              else:
+                $out .= 'grey-bg';
+              endif; 
 
-            $out .= '"><div class="tile__meta"><div class="tile__category down-1">'. $categoryList . '</div><div class="tile__date down-1">' . get_the_date() .'</div></div>
-              <h3 class="tile__title"><a href="'. get_the_permalink() .'">' . get_the_title().'</a></h3><div class="tile__tags"><ul>' . $tagList . '</ul></div>'; 
+              $out .= '"><div class="tile__meta"><div class="tile__category down-1">'. $categoryList . '</div><div class="tile__date down-1">' . get_the_date() .'</div></div>
+                <h3 class="tile__title"><a href="'. get_the_permalink() .'">' . get_the_title().'</a></h3><div class="tile__tags"><ul>' . $tagList . '</ul></div>'; 
 
 
-            $out .= '</article>';
+              $out .= '</article>';
 
-            if($postitem%3 == 2):
-              $out .= '</div>'; 
-            endif;
+              if($postitem%3 == 2):
+                $out .= '</div>'; 
+              endif;
+            } else if ($perrow === '2') {
+              if($postitem%2 == 0): 
+                $out .= '<div class="row">'; 
+              endif; 
+
+              $out .= '<article class="tile tile__1x tile--dark-bg" 
+                style="background-image: url('. $bgimg .');"><div class="tile__meta"><div class="tile__category down-1">' . $categoryList . '</div><div class="tile__date down-1">' . get_the_date() . '</div></div><h3 class="tile__title"><a href="' . get_the_permalink() . '">' . get_the_title().'</a></h3><div class="tile__tags"><ul>' . $tagList . '</ul></div>';
+
+              $out .= '</article>';
+
+              if($postitem%2 == 1):
+                $out .= '</div>'; 
+              endif;
+            }
             $postitem++;
           endwhile; 
         endif;

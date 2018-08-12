@@ -21,7 +21,8 @@ var $loader = $('#more_posts');
 var cat = $loader.data('category');
 var ppp = 6;
 var offset = $('.tile-container').find('.tile').length;
- 
+var perrow = $loader.data('perrow');
+
 $loader.on( 'click', load_ajax_posts );
  
 function load_ajax_posts() {
@@ -34,6 +35,7 @@ function load_ajax_posts() {
         'cat': cat,
         'ppp': ppp,
         'offset': offset,
+        'perrow': perrow,
         'action': 'mytheme_more_post_ajax'
       },
       beforeSend : function () {

@@ -1,6 +1,6 @@
 <?php /* Template Name: Speaking Page */?>
 
-<?php get_header(); ?>
+<?php get_header();  $cat_id = get_query_var('cat');?>
  <div class="speaking">
   <?php 
     $hasUpcoming = false;
@@ -36,7 +36,7 @@
         </div>
 
         <div class="row">
-          <section class="tile-container col-sm-6 col-md-8 tile-2up">
+          <section class="tile-container col-sm-6 col-md-8 tile-2up ajax_posts">
 
     <?php endif;
       $args =  array( 
@@ -77,13 +77,16 @@
         </div>
 
         <div class="row">
-          <section class="tile-container col-sm-6 col-md-8 tile-2up">
+          <section class="tile-container col-sm-6 col-md-8 tile-2up ajax_posts">
         <?php endif; ?>
 
           <?php if ($count%2 == 0): ?>
             <div class="row">
           <?php endif ?>
-          <?php set_query_var( 'bgimg', $bgimg );
+          <?php if(has_post_thumbnail($post->ID)) {
+            $bgimg = wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'medium_large' ); 
+            set_query_var( 'bgimg', $bgimg );
+            }
             get_template_part('speaking-engagements', get_post_format()); ?> 
           <?php if ($count%2 == 1): ?>
             </div>
@@ -94,7 +97,9 @@
     <?php include('sidebar-speaking.php'); ?>
 
   </div>
-
+  <div id="more_posts" data-category="<?php echo esc_attr($cat_id); ?>" data-perrow="2">
+    <a href="#" class="readmore"><?php esc_html_e('Load More', 'vivekbedi') ?></a>
+  </div>
   </main><!-- /.container -->
   <?php get_template_part('newsletter') ?>
 <?php get_footer(); ?>
