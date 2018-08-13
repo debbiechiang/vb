@@ -2,7 +2,7 @@
    <div class="wrapper container-fluid">
        <div class="row">
          <div class="">
-           Newsletter signup
+           <!-- Newsletter signup -->
          </div>
      </div>
     </div>

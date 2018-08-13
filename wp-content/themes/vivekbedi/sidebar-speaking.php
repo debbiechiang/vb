@@ -4,14 +4,14 @@
     <?php 
       $upcomingargs =  array( 
         'post_type' => 'speaking-engagement',
-        'category' => 'upcoming',
+        'category_name' => 'upcoming',
         'orderby' => 'date',
         'order' => 'DESC', 
         'posts_per_page' => '3'
       );
       $upcoming = new WP_Query( $upcomingargs );?>
       <?php if ($upcoming->have_posts()): ?>
-        <?php while ($upcoming->have_posts()) : $upcoming->the_post(); ?>
+        <?php while($upcoming->have_posts()) : $upcoming->the_post(); ?>
           <li class="sidebar__item">
             <div class="sidebar__item-img speaker-series__img">
               <?php if(class_exists('Dynamic_Featured_Image')) {
@@ -35,12 +35,12 @@
         <li class="sidebar__item no-results">
           No upcoming speaking engagements found.
         </li>
-      <?php endif; ?>
+      <?php wp_reset_postdata();  endif; ?>
   </ul>
-  <a href="" class="sidebar__see-more-link">See All Speaking Engagements</a>
+
   <div class="sidebar__contact-me">
-    <h3><?php echo get_post_custom_values('speaking_sidebar_title')[0] ?></h3>
-    <p><?php echo get_post_custom_values('speaking_sidebar_blurb')[0] ?></p>
+    <h3><?php echo get_post_custom_values('speaking_title')[0] ?></h3>
+    <p><?php echo get_post_custom_values('speaking_blurb')[0] ?></p>
     <a class="learn-more" href="/about">Learn More</a>
   </div>
-</aside><!-- /.homepage-sidebar -->
+</aside><!-- /.sidebar-speaking --> 

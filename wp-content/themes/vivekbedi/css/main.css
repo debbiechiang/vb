@@ -2399,6 +2399,9 @@ h1, h2, h3, h4, h5, h6 {
 .speaking .hero__info {
   max-width: 600px;
 }
+.speaking #more_posts {
+  margin: 0 auto;
+}
 html {
   box-sizing: border-box;
 }
@@ -2745,6 +2748,7 @@ h1 {
   font-size: 1.125rem;
 }
 .sidebar-module .sidebar__items .sidebar__item.no-results {
+  margin-bottom: 45px;
   padding-bottom: 45px;
 }
 .sidebar-module .sidebar__see-more-link {

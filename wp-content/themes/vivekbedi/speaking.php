@@ -25,7 +25,7 @@
           <div class="hero-overlay" />
         </section>
       </div>
-      <main class="content wrapper container-fluid">
+      <main class="content wrapper container-fluid speaking">
         <div class="row">
           <div class="col-sm-6 col-md-8 main">
             <div class="module-header row">
@@ -44,6 +44,7 @@
         'orderby' => 'date',
         'order' => 'DESC',  
         'posts_per_page' => '8',
+        'cat' => -1 // NOT "Upcoming"
       );
       $count = 0;
       $custom_query = new WP_Query( $args );
@@ -66,18 +67,18 @@
           <div class="hero-overlay" />
         </section>
       </div>
-      <main class="content wrapper container-fluid">
+      <main class="content wrapper container-fluid speaking">
         <div class="row">
           <div class="col-sm-6 col-md-8 main">
             <div class="module-header row">
               <h2 class="module-title col-xs-8 col-sm-8">Past Speaking Engagements</h2>
-              <a class="module-link down-1 col-xs-4 col-sm-4" href="">See All Speaking Engagements</a>
             </div>
           </div>
         </div>
 
         <div class="row">
-          <section class="tile-container col-sm-6 col-md-8 tile-2up ajax_posts">
+          <section class="tile-container col-sm-6 col-md-8 tile-2up ">
+            <div class="ajax_posts">
         <?php endif; ?>
 
           <?php if ($count%2 == 0): ?>
@@ -92,12 +93,14 @@
             </div>
           <?php endif ?>
       <?php $count++; endwhile; ?> 
+    </div>
+    <div id="more_posts" data-posttype="speaking-engagement"data-perrow="2">
+      <a href="#" class="readmore"><?php esc_html_e('Load More', 'vivekbedi') ?></a>
+    </div>
     </section>
     <?php include('sidebar-speaking.php'); ?>
   </div>
-  <div id="more_posts" data-posttype="speaking-engagement"data-perrow="2">
-    <a href="#" class="readmore"><?php esc_html_e('Load More', 'vivekbedi') ?></a>
-  </div>
+
   </main><!-- /.container -->
   <?php get_template_part('newsletter') ?>
 <?php get_footer(); ?>

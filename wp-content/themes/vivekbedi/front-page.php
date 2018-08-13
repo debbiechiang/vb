@@ -22,7 +22,7 @@
           'post_type' => 'post',
           'orderby' => 'date',
           'order' => 'DESC', 
-          'posts_per_page' => '5'
+          'posts_per_page' => '4'
         );
         $postitem = 0;
         $custom_query = new WP_Query( $args );
@@ -39,13 +39,9 @@
               </div>
               <div class="row">
             <?php elseif ($postitem === 2): ?>
-              <?php hm_get_template_part('tile', ['bg' => 'grey-bg', 'width' => '2x']) ?>
-              </div>
-              <div class="row">
+              <?php hm_get_template_part('tile', ['bg' => 'grey-bg', 'width' => '1x', 'bgimg' => $bgimg]) ?>
             <?php elseif ($postitem === 3): ?>
-              <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x', 'bgimg' => $bgimg]) ?>
-            <?php elseif ($postitem === 4): ?>
-              <?php hm_get_template_part('tile', ['bg' => 'grey-bg', 'width' => '1x']) ?>
+              <?php hm_get_template_part('tile', ['bg' => 'dark-bg', 'width' => '1x']) ?>
             </div>
           <?php endif?>
       <?php $postitem++; endwhile; ?>
