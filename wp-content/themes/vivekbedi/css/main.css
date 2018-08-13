@@ -873,7 +873,7 @@ optgroup {
     flex-basis: 66.6666666667%;
     max-width: 66.6666666667%;
   }
-  .col-sm-9, .blog .main p:not(.full-width), .blog .main h2, .blog .main h1, .blog .main h3, .blog .main h4, .blog .main h5, .blog .main h6 {
+  .col-sm-9 {
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -webkit-flex-grow: 0;
@@ -994,7 +994,7 @@ optgroup {
     padding-left: 10px;
     margin-left: 16.6666666667%;
   }
-  .col-sm-offset-3, .blog .main p:not(.full-width), .blog .main h2, .blog .main h1, .blog .main h3, .blog .main h4, .blog .main h5, .blog .main h6 {
+  .col-sm-offset-3 {
     box-sizing: border-box;
     -webkit-box-flex: 0;
     -webkit-flex-grow: 0;
@@ -2368,15 +2368,7 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 100%;
   position: relative;
 }
-.blog .main div iframe {
-  height: 100%;
-  left: 0;
-  padding-bottom: 56.25%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-.blog .main p:not(.full-width):first-child, .blog .main h2:first-child, .blog .main h1:first-child, .blog .main h3:first-child, .blog .main h4:first-child, .blog .main h5:first-child, .blog .main h6:first-child {
+.blog .main p:first-child {
   margin-top: 0;
 }
 .blog .main h2 {

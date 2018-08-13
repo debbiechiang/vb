@@ -17,8 +17,10 @@
     <main class="wrapper container-fluid blog-content">
       <div class="row">
         <section class="main">
-        <?php include ('sidebar-post.php') ?>
-          <?php the_content(); ?>
+          <?php include ('sidebar-post.php') ?>
+          <div class="col-sm-9 col-sm-offset-3">
+            <?php the_content(); ?>
+          </div>
         </section>
       </div>
     </main><!-- /.container -->

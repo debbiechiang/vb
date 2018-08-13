@@ -77,22 +77,8 @@
     min-width: 100%; 
     position: relative; 
 
-    div iframe {
-      height: 100%;
-      left: 0;
-      padding-bottom: 56.25%;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-
-    p:not(.full-width),
-    h2, h1, h3, h4, h5, h6 {
-      @extend .col-sm-9;
-      @extend .col-sm-offset-3;
-      &:first-child {
-        margin-top: 0;
-      }
+    p:first-child {
+      margin-top: 0;
     }
     
     h2 {
