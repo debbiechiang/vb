@@ -90,6 +90,9 @@
     h2, h1, h3, h4, h5, h6 {
       @extend .col-sm-9;
       @extend .col-sm-offset-3;
+      &:first-child {
+        margin-top: 0;
+      }
     }
     
     h2 {

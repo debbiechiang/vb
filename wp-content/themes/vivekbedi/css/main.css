@@ -2376,6 +2376,9 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   width: 100%;
 }
+.blog .main p:not(.full-width):first-child, .blog .main h2:first-child, .blog .main h1:first-child, .blog .main h3:first-child, .blog .main h4:first-child, .blog .main h5:first-child, .blog .main h6:first-child {
+  margin-top: 0;
+}
 .blog .main h2 {
   font-size: 2rem;
 }

@@ -1,6 +1,6 @@
 <?php /* Template Name: Speaking Page */?>
 
-<?php get_header();  $cat_id = get_query_var('cat');?>
+<?php get_header(); ?>
  <div class="speaking">
   <?php 
     $hasUpcoming = false;
@@ -19,7 +19,7 @@
               <div class="hero__type"><?php the_category(' ');?></div>
             </div>
             <h1 class="hero__title"><?php the_title() ?></h1>
-            <div class="hero__excerpt"><?php the_excerpt() ?></div>
+            <div class="hero__excerpt"><?php if(has_excerpt()) { the_excerpt(); } ?></div>
             <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
           </div>
           <div class="hero-overlay" />

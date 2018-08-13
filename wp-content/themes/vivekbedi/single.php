@@ -9,7 +9,7 @@
             <div class="hero__date"><?php the_date(); ?></div>
           </div>
           <h1 class="hero__title"><?php the_title(); ?></h1>
-          <div class="hero__excerpt"><?php the_excerpt(); ?></div>
+          <div class="hero__excerpt"><?php if(has_excerpt()) { the_excerpt(); } ?></div>
         </div>
       </div>
       <div class="hero-overlay" />
