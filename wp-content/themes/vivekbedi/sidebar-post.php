@@ -1,4 +1,4 @@
 <aside class="col-xs-12 col-sm-4 sidebar-module sidebar-post">
-  <img src="" class="share-sidebar-img"/> 
-  <a href="">Share</a>
+  <?php echo do_shortcode(' [Sassy_Social_Share] ') ?>
+  <span class="share-sidebar-title">Share</span>
 </aside> 
