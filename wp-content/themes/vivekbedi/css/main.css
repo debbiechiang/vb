@@ -2331,6 +2331,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Merriweather Sans";
   font-size: 3.125rem;
   line-height: 1;
+  line-height: 1.25;
   text-align: left;
   margin-bottom: 1.5rem;
 }
@@ -2379,6 +2380,17 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+.blog .main ul {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  font-family: "Merriweather Sans";
+  font-size: 1.5rem;
+  line-height: 2.0833;
+}
+.blog .main ul li {
+  list-style-type: disc;
 }
 .speaking .hero__type {
   color: #f73f48;

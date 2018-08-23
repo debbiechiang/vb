@@ -1,9 +1,9 @@
- <section class="full-module newsletter-signup">
+<!--  <section class="full-module newsletter-signup">
    <div class="wrapper container-fluid">
        <div class="row">
          <div class="">
-           <!-- Newsletter signup -->
+           Newsletter signup
          </div>
      </div>
     </div>
-</section>
+</section> -->

@@ -2,7 +2,7 @@
  <div class="news">
   <?php 
     $args =  array( 
-      'post_type' => 'post',
+      'post_type' => array('post', 'speaking-engagement'),
       'orderby' => 'post_date',
       'tag_id' => $tag_id,
       'order' => 'DESC', 

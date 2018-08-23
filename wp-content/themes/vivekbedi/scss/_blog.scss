@@ -22,6 +22,7 @@
 
   .hero__title {
     @include h2();
+    line-height: 1.25;
     text-align: left;
     margin-bottom: 1.5rem;
   }
@@ -30,22 +31,6 @@
     align-items: center;
     margin-bottom: 1.5rem;
   }
-
-  // .hero__type {
-  //   color: $red;
-  //   font-size: 1.25rem;
-  //   font-weight: 400;
-  //   letter-spacing: 0.35px;
-  //   line-height: 1;
-  //   margin-right: 40px;
-  //   text-transform: uppercase;
-  // }
-
-  // .hero__date,
-  // .hero__excerpt {
-  //   @include body-p();
-  //   line-height: 1.33333;
-  // }
 
   .sidebar-post {
     align-items: center;
@@ -90,6 +75,17 @@
       min-width: 100%;
       margin-top: 2rem;
       margin-bottom: 2rem;
+    }
+
+    ul {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      @include body-p();
+
+      li {
+        list-style-type: disc;
+      }
     }
   }
 }
